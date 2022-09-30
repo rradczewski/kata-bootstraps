@@ -1,0 +1,6 @@
+{
+  "name": "Java",
+  "image": "maven:3",
+  "postCreateCommand": "mvn test -DskipTests=true",
+  "containerUser": "${localEnv:UID}:${localEnv:GID}"
+}
