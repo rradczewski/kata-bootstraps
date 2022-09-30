@@ -1,0 +1,36 @@
+name: Test each environment
+
+on:
+  push:
+
+jobs:
+  # ------------------------
+  find_bootstraps:
+    runs-on: ubuntu-latest
+    outputs:
+      bootstraps: ${{ steps.generate-matrix.outputs.bootstraps }}
+    steps:
+      - uses: actions/checkout@v3
+      - name: Generate Matrix
+        id: generate-matrix
+        run: |
+          set -eux
+          BOOTSTRAPS=$(find . -name ".devcontainer.json" -type f -exec dirname {} \; | cut -c3- | jq -Rsc '. / "\n" - [""]')
+          echo ::set-output name=bootstraps::${BOOTSTRAPS}
+
+  run_tests:
+    needs: find_bootstraps
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        bootstrap: ${{ fromJson(needs.find_bootstraps.outputs.bootstraps) }}
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: lts/*
+      - name: Install Devcontainers CLI
+        run: npm install -g @devcontainers/cli
+      - run: |
+          echo "Running for ${{ matrix.bootstrap }}"
+          ./.bin/run_test_in_devcontainer.sh "${{ matrix.bootstrap }}"
