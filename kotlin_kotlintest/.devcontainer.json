@@ -1,7 +1,7 @@
 {
   "name": "Java",
-  "image": "gradle:7.5.0-jammy",
+  "image": "gradle:latest",
   "onCreateCommand": "gradle dependencies",
   "postCreateCommand": "gradle test 2>&1 | tee /dev/stderr | grep -q '1 test completed, 1 failed'",
-  "containerUser": "${localEnv:UID}:${localEnv:GID}"
+  "containerUser": "1000:1000"
 }
