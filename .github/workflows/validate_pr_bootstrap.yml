@@ -16,7 +16,7 @@ jobs:
         run: npm install -g @devcontainers/cli
       - uses: actions/checkout@v3
         with:
-          fetch-depth: 2
+          fetch-depth: 0
       - name: Run changed-files with json output
         id: changed-dirs
         uses: tj-actions/changed-files@v31
