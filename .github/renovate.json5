@@ -3,7 +3,6 @@
   "extends": [
     "config:base"
   ],
-  "dependencyDashboard": true,
   "automerge": true,
   "automergeType": "branch",
   "commitMessagePrefix": "{{packageFileDir}}: {{semanticPrefix}}",
