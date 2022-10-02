@@ -20,7 +20,7 @@ jobs:
         id: generate-matrix
         run: |
           set -x
-          BOOTSTRAPS=$((for i in $(ls -d */);
+          BOOTSTRAPS=$((for i in $(ls -d */ | sed 's/.$//');
           do 
             # Let @devcontainers/cli try and find its configuration in the changed folder. If it finds it, print the folder, otherwise, continue
             devcontainer read-configuration --workspace-folder "$i" > /dev/null && echo "$i" || true
