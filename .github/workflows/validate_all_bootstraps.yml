@@ -1,9 +1,7 @@
 name: Validate all Bootstraps
 
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
 
 jobs:
   find_bootstraps:

@@ -1,7 +1,6 @@
 name: Validate changed Bootstraps
 
-on:
-  pull_request:
+on: [push, pull_request]
 
 jobs:
   find_bootstraps:
