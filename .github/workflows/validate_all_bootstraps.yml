@@ -31,6 +31,7 @@ jobs:
     name: Validate Bootstrap ${{ matrix.bootstrap }}
     needs: [find_bootstraps]
     runs-on: ubuntu-latest
+    if: ${{ needs.find_bootstraps.outputs.bootstraps != '[]' && needs.find_bootstraps.outputs.bootstraps != '' }}
     strategy:
       matrix:
         bootstrap: ${{ fromJson(needs.find_bootstraps.outputs.bootstraps) }}
