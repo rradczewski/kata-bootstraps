@@ -1,4 +1,4 @@
-name: Test each environment
+name: Validate all Bootstraps
 
 on:
   push:
@@ -6,6 +6,7 @@ on:
 jobs:
   # ------------------------
   find_bootstraps:
+    name: Find all Bootstraps with a devcontainer spec
     runs-on: ubuntu-latest
     outputs:
       bootstraps: ${{ steps.generate-matrix.outputs.bootstraps }}
@@ -19,7 +20,8 @@ jobs:
           echo ::set-output name=bootstraps::${BOOTSTRAPS}
 
   run_tests:
-    needs: find_bootstraps
+    name: Validate Bootstrap ${{ matrix.bootstrap }}
+    needs: [find_bootstraps]
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -31,6 +33,6 @@ jobs:
           node-version: lts/*
       - name: Install Devcontainers CLI
         run: npm install -g @devcontainers/cli
-      - run: |
-          echo "Running for ${{ matrix.bootstrap }}"
+      - name: Run Test for ${{ matrix.bootstrap }}
+        run: |
           ./.bin/run_test_in_devcontainer.sh "${{ matrix.bootstrap }}"
