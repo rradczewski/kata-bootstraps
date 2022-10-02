@@ -1,0 +1,20 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:base"
+  ],
+  "automerge": true,
+  
+  // Support for VSCode devcontainer.json Docker images
+  "regexManagers": [
+    {
+      "fileMatch": [
+        "\\.?devcontainer.json$"
+      ],
+      "matchStrings": [
+        "\"image\" *: *\"(?<depName>.+?):(?<currentValue>.+?)\",?"
+      ],
+      "datasourceTemplate": "docker"
+    }
+  ]
+}
