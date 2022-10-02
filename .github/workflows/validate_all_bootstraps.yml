@@ -2,6 +2,8 @@ name: Validate all Bootstraps
 
 on:
   push:
+    branches:
+      - main
 
 jobs:
   # ------------------------
