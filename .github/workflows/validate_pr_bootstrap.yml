@@ -4,13 +4,17 @@ on:
   pull_request:
 
 jobs:
-  # ------------------------
   find_bootstraps:
     name: Find changed bootstraps
     runs-on: ubuntu-latest
     outputs:
       bootstraps: ${{ steps.generate-matrix.outputs.bootstraps }}
     steps:
+      - uses: actions/setup-node@v3
+        with:
+          node-version: lts/*
+      - name: Install Devcontainers CLI
+        run: npm install -g @devcontainers/cli
       - uses: actions/checkout@v3
       - name: Run changed-files with json output
         id: changed-dirs
@@ -20,4 +24,28 @@ jobs:
       - name: Generate Matrix
         id: generate-matrix
         run: |
-          echo ${{ steps.changed-dirs.outputs.all_all_changed_files }}
+          set -x
+          BOOTSTRAPS=$((for i in ${{ steps.changed-dirs.outputs.all_changed_files }};
+          do 
+            # Let @devcontainers/cli try and find its configuration in the changed folder. If it finds it, print the folder, otherwise, continue
+            devcontainer read-configuration --workspace-folder "$i" > /dev/null && echo "$i" || true
+          done) | jq -Rsc '. / "\n" - [""]')
+          echo ::set-output name=bootstraps::${BOOTSTRAPS}
+
+  run_tests:
+      name: Validate Bootstrap ${{ matrix.bootstrap }}
+      needs: [find_bootstraps]
+      runs-on: ubuntu-latest
+      strategy:
+        matrix:
+          bootstrap: ${{ fromJson(needs.find_bootstraps.outputs.bootstraps) }}
+      steps:
+        - uses: actions/setup-node@v3
+          with:
+            node-version: lts/*
+        - name: Install Devcontainers CLI
+          run: npm install -g @devcontainers/cli
+        - uses: actions/checkout@v3
+        - name: Run Test for ${{ matrix.bootstrap }}
+          run: |
+            ./.bin/run_test_in_devcontainer.sh "${{ matrix.bootstrap }}"
