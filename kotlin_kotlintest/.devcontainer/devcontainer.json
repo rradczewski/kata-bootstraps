@@ -1,0 +1,9 @@
+{
+  "name": "Java",
+  "build": { "dockerfile": "Dockerfile" },
+  "onCreateCommand": "./gradlew dependencies",
+  "postCreateCommand": "./gradlew test 2>&1 | tee /dev/stderr | grep -q '1 test completed, 1 failed'",
+  "updateRemoteUserUID": true,
+  "containerUser": "java",
+  "remoteUser": "java"
+}
