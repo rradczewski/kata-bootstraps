@@ -1,8 +1,18 @@
 {
   "name": "Java",
-  "image": "gradle:latest",
-  "onCreateCommand": "gradle dependencies",
-  "postCreateCommand": "gradle test 2>&1 | tee /dev/stderr | grep -q '1 test completed, 1 failed'",
-  "containerUser": "gradle",
-  "remoteUser": "gradle"
+  "image": "eclipse-temurin:17-jdk",
+  "onCreateCommand": "./gradlew dependencies",
+  "postCreateCommand": "./gradlew test 2>&1 | tee /dev/stderr | grep -q '1 test completed, 1 failed'",
+  "containerUser": "1000",
+  "remoteUser": "1000",
+  "features": {
+    "ghcr.io/devcontainers/features/common-utils:1": {
+      "installZsh": "false",
+      "installOhMyZsh": "false",
+      "upgradePackages": "false",
+      "username": "java",
+      "uid": "1000",
+      "gid": "1000"
+    }
+  }
 }
