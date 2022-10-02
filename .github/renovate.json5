@@ -4,6 +4,7 @@
     "config:base"
   ],
   "automerge": true,
+  "automergeType": "branch",
   "commitMessagePrefix": "{{packageFileDir}}: {{semanticPrefix}}",
   // Support for VSCode devcontainer.json Docker images
   "regexManagers": [
