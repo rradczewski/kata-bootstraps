@@ -1,0 +1,23 @@
+name: Validate changed Bootstraps
+
+on:
+  pull_request:
+
+jobs:
+  # ------------------------
+  find_bootstraps:
+    name: Find changed bootstraps
+    runs-on: ubuntu-latest
+    outputs:
+      bootstraps: ${{ steps.generate-matrix.outputs.bootstraps }}
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run changed-files with json output
+        id: changed-dirs
+        uses: tj-actions/changed-files@v31
+        with:
+          dir_names: true
+      - name: Generate Matrix
+        id: generate-matrix
+        run: |
+          echo ${{ steps.changed-dirs.outputs.all_all_changed_files }}
