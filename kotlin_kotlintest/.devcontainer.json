@@ -1,0 +1,6 @@
+{
+  "name": "Java",
+  "image": "gradle:latest",
+  "postCreateCommand": "gradle dependencies",
+  "containerUser": "${localEnv:UID}:${localEnv:GID}"
+}

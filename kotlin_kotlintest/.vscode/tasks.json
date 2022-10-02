@@ -1,0 +1,28 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build",
+            "type": "shell",
+            "command": "gradle testClasses",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "Test",
+            "type": "shell",
+            "command": "gradle test",
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "Validate Bootstrap",
+            "type": "shell",
+            "command": "gradle test 2>&1 | tee /dev/stderr | grep -q '1 test completed, 1 failed'"
+        }
+    ]
+}
