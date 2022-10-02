@@ -27,27 +27,34 @@ jobs:
         id: generate-matrix
         run: |
           set -x
-          BOOTSTRAPS=$((for i in ${{ steps.changed-dirs.outputs.all_changed_files }};
+          BOOTSTRAPS=$(for i in $(ls -d */);
           do 
             # Let @devcontainers/cli try and find its configuration in the changed folder. If it finds it, print the folder, otherwise, continue
             devcontainer read-configuration --workspace-folder "$i" > /dev/null && echo "$i" || true
-          done) | jq -Rsc '. / "\n" - [""]')
-          echo ::set-output name=bootstraps::${BOOTSTRAPS}
+          done)
+
+          CHANGED_FILES=$(echo "${{ steps.changed-dirs.outputs.all_changed_files }}" | xargs -n1)
+
+          CHANGED_BOOTSTRAPS=$(for bootstrap in $BOOTSTRAPS;
+          do
+            echo "$CHANGED_FILES" | grep -qE "^${bootstrap}" && echo "$bootstrap" || true
+          done | jq -Rsc '. / "\n" - [""]')
+          echo ::set-output name=bootstraps::${CHANGED_BOOTSTRAPS}
 
   run_tests:
-      name: Validate Bootstrap ${{ matrix.bootstrap }}
-      needs: [find_bootstraps]
-      runs-on: ubuntu-latest
-      strategy:
-        matrix:
-          bootstrap: ${{ fromJson(needs.find_bootstraps.outputs.bootstraps) }}
-      steps:
-        - uses: actions/setup-node@v3
-          with:
-            node-version: lts/*
-        - name: Install Devcontainers CLI
-          run: npm install -g @devcontainers/cli
-        - uses: actions/checkout@v3
-        - name: Run Test for ${{ matrix.bootstrap }}
-          run: |
-            ./.bin/run_test_in_devcontainer.sh "${{ matrix.bootstrap }}"
+    name: Validate Bootstrap ${{ matrix.bootstrap }}
+    needs: [find_bootstraps]
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        bootstrap: ${{ fromJson(needs.find_bootstraps.outputs.bootstraps) }}
+    steps:
+      - uses: actions/setup-node@v3
+        with:
+          node-version: lts/*
+      - name: Install Devcontainers CLI
+        run: npm install -g @devcontainers/cli
+      - uses: actions/checkout@v3
+      - name: Run Test for ${{ matrix.bootstrap }}
+        run: |
+          ./.bin/run_test_in_devcontainer.sh "${{ matrix.bootstrap }}"
