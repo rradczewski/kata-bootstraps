@@ -1,0 +1,7 @@
+{
+  "name": "NodeJS",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:latest",
+  "remoteUser": "node",
+  "onCreateCommand": "npm install",
+  "postCreateCommand": "CI=1 npm test 2>&1 | tee /dev/stderr | grep -q 'Tests:       1 failed, 1 total'"
+}
