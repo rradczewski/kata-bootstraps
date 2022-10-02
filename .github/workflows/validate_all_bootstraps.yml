@@ -6,7 +6,6 @@ on:
       - main
 
 jobs:
-  # ------------------------
   find_bootstraps:
     name: Find all Bootstraps with a devcontainer spec
     runs-on: ubuntu-latest
