@@ -23,7 +23,7 @@ jobs:
           BOOTSTRAPS=$((for i in $(ls -d */ | sed 's/.$//');
           do 
             # Let @devcontainers/cli try and find its configuration in the changed folder. If it finds it, print the folder, otherwise, continue
-            devcontainer read-configuration --workspace-folder "$i" > /dev/null && echo "$i" || true
+            devcontainer read-configuration --log-level=trace --workspace-folder "$i" > /dev/null && echo "$i" || true
           done) | jq -Rsc '. / "\n" - [""]')
           echo ::set-output name=bootstraps::${BOOTSTRAPS}
 
@@ -44,7 +44,7 @@ jobs:
       - uses: actions/checkout@v3
       - name: Set up container for ${{ matrix.bootstrap }}
         run: |
-          devcontainer up --log-level=trace --skip-post-create --remove-existing-container --workspace-folder="${{ matrix.bootstrap }}"
+          ./.bin/start_devcontainer.sh "${{ matrix.bootstrap }}"
       - name: Expect failing test for ${{ matrix.bootstrap }}
         run: |
-          devcontainer run-user-commands --log-level=trace --workspace-folder="${{ matrix.bootstrap }}"
+          ./.bin/run_test_in_devcontainer.sh "${{ matrix.bootstrap }}"
