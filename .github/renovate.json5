@@ -7,7 +7,7 @@
   "dependencyDashboard": true,
   "automerge": true,
   "automergeType": "branch",
-  "commitMessagePrefix": "{{packageFileDir}}: {{semanticPrefix}}",
+  "commitMessagePrefix": "[{{packageFileDir}}] {{semanticPrefix}}",
   // Support for VSCode devcontainer.json Docker images
   "regexManagers": [
     {
