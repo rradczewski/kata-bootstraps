@@ -19,7 +19,7 @@ Any bootstrap project may be added to this repository, if:
 - A single failing test exists
 - Version numbers are either `latest` or [renovate](https://github.com/renovatebot/) can pick them up automatically (e.g. don't use variables in `pom.xml` or elsewhere).
 
-A bootstrap needs to contain a valid [`.devcontainer.json`](./java_junit5/.devcontainer.json) that configures a container with all appropriate tooling. Furthermore, the `postCreateCommand` needs to contain a shell command that, when executed, will verify that the test runner correctly runs and reports the single failure present.
+A bootstrap needs to contain a valid [`.devcontainer.json`](./java_junit5/.devcontainer/devcontainer.json) that configures a container with all appropriate tooling. Furthermore, the `postCreateCommand` needs to contain a shell command that, when executed, will verify that the test runner correctly runs and reports the single failure present.
 
 ## Other kata bootstraps
 
