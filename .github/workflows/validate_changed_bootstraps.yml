@@ -19,7 +19,7 @@ jobs:
           fetch-depth: 0
       - name: Run changed-files with json output
         id: changed-dirs
-        uses: tj-actions/changed-files@v31
+        uses: tj-actions/changed-files@v32
         with:
           dir_names: true
       - name: Generate Matrix
