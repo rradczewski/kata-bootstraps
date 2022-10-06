@@ -4,7 +4,18 @@ This repository contains curated starter projects for running katas. All project
 
 ## Using a bootstrap
 
-Clone this repository and open the project you want to work in (e.g. `java_junit5`).
+Clone this repository and open the project you want to work in (e.g. [`java_junit5/`](./java_junit5/)).
+
+<a href="./java_junit5"><img width="100px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" /></a>
+<a href="./kotlin_kotlintest"><img width="100px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" /></a>
+<a href="./nodejs_jest"><img width="100px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" /></a>
+<a href="./python_pytest"><img width="100px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" /></a>
+<a href="./ruby_rspec"><img width="100px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ruby/ruby-original.svg" /></a>
+<a href="./rust"><img width="100px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rust/rust-plain.svg" /></a>
+<a href="./typescript_jest"><img width="100px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" /></a>
+
+If you're using [VisualStudio Code](https://code.visualstudio.com/), confirm launching the **Dev Container**. A fully set-up environment for the language you picked will be installed into a docker sandbox. 
+
 
 ## Contributing a bootstrap
 
