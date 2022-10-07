@@ -3,5 +3,9 @@
   "image": "mcr.microsoft.com/devcontainers/python:3.10",
   "remoteUser": "vscode",
   "onCreateCommand": "pipenv install",
-  "postCreateCommand": "pipenv run pytest | tee /dev/stderr | grep -q '1 failed in'"
+  "customizations": {
+    "github.com/rradczewski/kata-bootstraps": {
+      "failingTestVerification": "pipenv run pytest | tee /dev/stderr | grep -q '1 failed in'"
+    }
+  }
 }

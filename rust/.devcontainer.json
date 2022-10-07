@@ -3,5 +3,9 @@
   "image": "mcr.microsoft.com/devcontainers/rust:1",
   "remoteUser": "vscode",
   "onCreateCommand": "cargo update",
-  "postCreateCommand": "cargo test | tee /dev/stderr | grep -q 'test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s'"
+  "customizations": {
+    "github.com/rradczewski/kata-bootstraps": {
+      "failingTestVerification": "cargo test | tee /dev/stderr | grep -q 'test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s'"
+    }
+  }
 }

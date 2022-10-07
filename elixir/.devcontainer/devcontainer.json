@@ -11,6 +11,11 @@
       "username": "vscode"
     }
   },
+  "remoteUser": "vscode",
   "onCreateCommand": "mix deps.get && mix compile",
-  "postCreateCommand": "mix test | tee /dev/stderr | grep -q '1 test, 1 failure'"
+  "customizations": {
+    "github.com/rradczewski/kata-bootstraps": {
+      "failingTestVerification": "mix test | tee /dev/stderr | grep -q '1 test, 1 failure'"
+    }
+  }
 }
