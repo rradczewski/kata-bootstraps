@@ -10,21 +10,12 @@ jobs:
     outputs:
       bootstraps: ${{ steps.generate-matrix.outputs.bootstraps }}
     steps:
-      - uses: actions/setup-node@v3
-        with:
-          node-version: lts/*
-      - name: Install Devcontainers CLI
-        run: npm install -g @devcontainers/cli
       - uses: actions/checkout@v3
       - name: Generate Matrix
         id: generate-matrix
         run: |
           set -x
-          BOOTSTRAPS=$((for i in $(ls -d */ | sed 's/.$//');
-          do 
-            # Let @devcontainers/cli try and find its configuration in the changed folder. If it finds it, print the folder, otherwise, continue
-            devcontainer read-configuration --log-level=trace --workspace-folder "$i" > /dev/null && echo "$i" || true
-          done) | jq -Rsc '. / "\n" - [""]')
+          BOOTSTRAPS=$(ls -d */ | sed 's/.$//' | jq -Rsc '. / "\n" - [""]')
           echo ::set-output name=bootstraps::${BOOTSTRAPS}
 
   run_tests:
