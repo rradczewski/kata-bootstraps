@@ -1,0 +1,16 @@
+{
+  "name": "Elixir",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/common-utils:1": {
+      "installZsh": false,
+      "installOhMyZsh": false,
+      "upgradePackages": false,
+      "username": "vscode"
+    }
+  },
+  "onCreateCommand": "mix deps.get && mix compile",
+  "postCreateCommand": "mix test | tee /dev/stderr | grep -q '1 test, 1 failure'"
+}
