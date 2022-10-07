@@ -57,7 +57,7 @@ jobs:
       - uses: actions/checkout@v3
       - name: Set up container for ${{ matrix.bootstrap }}
         run: |
-          devcontainer up --log-level=trace --skip-post-create --remove-existing-container --workspace-folder="${{ matrix.bootstrap }}"
+          ./.bin/start_devcontainer.sh "${{ matrix.bootstrap }}"
       - name: Expect failing test for ${{ matrix.bootstrap }}
         run: |
-          devcontainer run-user-commands --log-level=trace --workspace-folder="${{ matrix.bootstrap }}"
+          ./.bin/run_test_in_devcontainer.sh "${{ matrix.bootstrap }}"
