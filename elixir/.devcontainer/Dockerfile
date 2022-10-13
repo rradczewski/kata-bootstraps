@@ -1,1 +1,1 @@
-FROM elixir:1.14.0
+FROM elixir:1.14.1
