@@ -2,6 +2,8 @@
 
 set -xeuo pipefail
 
+PATH="$( dirname -- "$0" )/node_modules/.bin/:${PATH}"
+
 run() {
     local DIR="$1"
 
