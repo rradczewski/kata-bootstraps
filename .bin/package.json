@@ -9,6 +9,6 @@
   "author": "",
   "license": "UNLICENSED",
   "dependencies": {
-    "@devcontainers/cli": "^0.23.2"
+    "@devcontainers/cli": "^0.25.0"
   }
 }
