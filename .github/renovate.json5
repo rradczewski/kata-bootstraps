@@ -18,6 +18,18 @@
         "\"image\" *: *\"(?<depName>.+?):(?<currentValue>.+?)\",?"
       ],
       "datasourceTemplate": "docker"
+    },
+    {
+      "fileMatch": [
+        "(^|/|\\.)pom\\.xml$"
+      ],
+      "matchStrings": [
+        "<maven\\.compiler\\.release>(?<currentValue>.*?)<\\/maven\\.compiler\\.release>"
+      ],
+      "depNameTemplate": "eclipse-temurin",
+      "datasourceTemplate": "docker",
+      "versioningTemplate": "regex:(?<major>\\d+)"
     }
+
   ]
 }
