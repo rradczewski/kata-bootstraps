@@ -24,6 +24,14 @@
       "matchDatasources": [
         "docker"
       ],
+      "defaultRegistryUrls": [
+        "https://index.docker.io"
+      ]
+    },
+    {
+      "matchDatasources": [
+        "docker"
+      ],
       "matchPackageNames": [
         "eclipse-temurin"
       ],
