@@ -25,6 +25,7 @@
         "docker"
       ],
       "matchPackageNames": [
+        "docker.io/eclipse-temurin",
         "eclipse-temurin"
       ],
       "versioning": "regex:^(?<major>\\d+)(\\.(?<minor>\\d+))?(\\.(?<patch>\\d+))?(_(?<build>\\d+))?(-(?<compatibility>.*))?$"
@@ -34,6 +35,7 @@
         "docker"
       ],
       "matchPackageNames": [
+        "docker.io/maven",
         "maven"
       ],
       "versioning": "regex:^(?<minor>\\d+)(\\.(?<patch>\\d+))?(\\.(?<build>\\d+))?-eclipse-temurin-(?<major>\\d+)-focal"
