@@ -4,6 +4,9 @@
     "config:base",
     "docker:enableMajor"
   ],
+  "ignorePresets": [
+    "workarounds:javaLTSVersions"
+  ],
   "dependencyDashboard": true,
   "automerge": true,
   "automergeType": "branch",
