@@ -8,16 +8,16 @@
   "automerge": true,
   "automergeType": "branch",
   "commitMessagePrefix": "[{{packageFileDir}}] {{semanticPrefix}}",
-  "hostRules": [
-    {
-      "encrypted": {
-        "password": "wcFMA/xDdHCJBTolAQ/+LXerrW/Y3YjMqEGUFzm7GAjE9VZHsrQgVAh57CBOZUJW2KQo5Y2oNQFVMFngZp3eY0Cq1uyXsPjQbNZXMgZlIZ77Rww70anSr0A4oinPajrvD+77DUFIQ0rMLLIU8sy+Iy/S0fqdgf1/xjU3fZjj4fvPvMri0HdQV840tvHYEcU6MxcGDdZrdjzP1fXcn6GWG7vyPyT/Ev+eH4OAbZafbdU9aKXv2e/NvBq54dWXCYhK03m3UuMt5Jui/cmveU854nM1cBrI6VN0iS7/ygQr8lhK2DrkIE+Xuw7jSnAzv/krGhyoH8qbQpA0Q+j+d8MEftZXPnsM2oCfC4YPkcLnEn1+a9cNHW2KT/ZKvavA/maJqNsKcR/zbzil32zBjjTcAlHqoR9equ03JYZXB1Xs0EpZIbGJHDp6o4IvgTymeqFfoex6qnvEFlDvtbMLGvnUsowLGwMDuR+oCxmOa3QgooxRrqSzms8ARoSkNf80bIo1o+U2V+J4KbwwMt1mP2t/9U9ydgLxguzl/Nx5H3HxTucKBhPF0euIRwUQXuzVdTIICxnfnO7sxJ/2/mV3XFgDzYKn/U27tYJaKcL3LFM7lkPemjbvfEHxpPgEt+bLPq5mJgK+lQBcPJ4mvqxK44bLKDWJO4HjetMn7E/Judyg+BzV5fTZSoPcjKMFgSzaKiXShQHq1lZVI/qvKsudJfNHwXugnYkniXufVFHRnM2PiNs0M4G3yvgElRDVIMptXYcb3VVBTt19+uYldQMkYxj3QkxlVZYhL3/Nb3Bq9XdWVL/dnA0xc+mkapBZyknZ1Woa/hnE3SOAFHmrwvH/LOz3r3MKtZuNOwuJx5z4vepW9ZhGkmWV63g"
-      },
-      "hostType": "docker",
-      "matchHost": "docker.io",
-      "username": "rradczewski"
-    }
-  ],
+  // "hostRules": [
+  //   {
+  //     "encrypted": {
+  //       "password": "wcFMA/xDdHCJBTolAQ/+LXerrW/Y3YjMqEGUFzm7GAjE9VZHsrQgVAh57CBOZUJW2KQo5Y2oNQFVMFngZp3eY0Cq1uyXsPjQbNZXMgZlIZ77Rww70anSr0A4oinPajrvD+77DUFIQ0rMLLIU8sy+Iy/S0fqdgf1/xjU3fZjj4fvPvMri0HdQV840tvHYEcU6MxcGDdZrdjzP1fXcn6GWG7vyPyT/Ev+eH4OAbZafbdU9aKXv2e/NvBq54dWXCYhK03m3UuMt5Jui/cmveU854nM1cBrI6VN0iS7/ygQr8lhK2DrkIE+Xuw7jSnAzv/krGhyoH8qbQpA0Q+j+d8MEftZXPnsM2oCfC4YPkcLnEn1+a9cNHW2KT/ZKvavA/maJqNsKcR/zbzil32zBjjTcAlHqoR9equ03JYZXB1Xs0EpZIbGJHDp6o4IvgTymeqFfoex6qnvEFlDvtbMLGvnUsowLGwMDuR+oCxmOa3QgooxRrqSzms8ARoSkNf80bIo1o+U2V+J4KbwwMt1mP2t/9U9ydgLxguzl/Nx5H3HxTucKBhPF0euIRwUQXuzVdTIICxnfnO7sxJ/2/mV3XFgDzYKn/U27tYJaKcL3LFM7lkPemjbvfEHxpPgEt+bLPq5mJgK+lQBcPJ4mvqxK44bLKDWJO4HjetMn7E/Judyg+BzV5fTZSoPcjKMFgSzaKiXShQHq1lZVI/qvKsudJfNHwXugnYkniXufVFHRnM2PiNs0M4G3yvgElRDVIMptXYcb3VVBTt19+uYldQMkYxj3QkxlVZYhL3/Nb3Bq9XdWVL/dnA0xc+mkapBZyknZ1Woa/hnE3SOAFHmrwvH/LOz3r3MKtZuNOwuJx5z4vepW9ZhGkmWV63g"
+  //     },
+  //     "hostType": "docker",
+  //     "matchHost": "docker.io",
+  //     "username": "rradczewski"
+  //   }
+  // ],
   // Support for VSCode devcontainer.json Docker images
   "packageRules": [
     {
