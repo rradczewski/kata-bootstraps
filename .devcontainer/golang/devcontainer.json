@@ -5,7 +5,8 @@
   "onCreateCommand": "go get && go mod download && go install github.com/onsi/ginkgo/v2/ginkgo",
   "customizations": {
     "github.com/rradczewski/kata-bootstraps": {
-      "failingTestVerification": "ginkgo | tee /dev/stderr | grep -q 'FAIL: TestApp'"
+      "failingTestVerification": "ginkgo | tee /dev/stderr | grep -q 'FAIL: TestApp'",
+      "languageLogo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original-wordmark.svg"
     }
   },
   "workspaceFolder": "/workspaces/kata-bootstraps/golang",

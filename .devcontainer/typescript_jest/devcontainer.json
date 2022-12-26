@@ -5,7 +5,8 @@
   "onCreateCommand": "npm install",
   "customizations": {
     "github.com/rradczewski/kata-bootstraps": {
-      "failingTestVerification": "CI=1 npm test 2>&1 | tee /dev/stderr | grep -q 'Tests:       1 failed, 1 total'"
+      "failingTestVerification": "CI=1 npm test 2>&1 | tee /dev/stderr | grep -q 'Tests:       1 failed, 1 total'",
+      "languageLogo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
     }
   },
   "workspaceFolder": "/workspaces/kata-bootstraps/typescript_jest",

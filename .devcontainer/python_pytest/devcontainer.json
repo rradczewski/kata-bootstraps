@@ -5,7 +5,8 @@
   "onCreateCommand": "pipenv install",
   "customizations": {
     "github.com/rradczewski/kata-bootstraps": {
-      "failingTestVerification": "pipenv run pytest | tee /dev/stderr | grep -q '1 failed in'"
+      "failingTestVerification": "pipenv run pytest | tee /dev/stderr | grep -q '1 failed in'",
+      "languageLogo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
     }
   },
   "workspaceFolder": "/workspaces/kata-bootstraps/python_pytest",
