@@ -15,7 +15,8 @@
   "onCreateCommand": "mix deps.get && mix compile",
   "customizations": {
     "github.com/rradczewski/kata-bootstraps": {
-      "failingTestVerification": "mix test | tee /dev/stderr | grep -q '1 test, 1 failure'"
+      "failingTestVerification": "mix test | tee /dev/stderr | grep -q '1 test, 1 failure'",
+      "languageLogo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/elixir/elixir-original.svg"
     }
   }
 }
