@@ -1,0 +1,13 @@
+{
+  "name": "Rust",
+  "image": "mcr.microsoft.com/devcontainers/rust:1",
+  "remoteUser": "vscode",
+  "onCreateCommand": "cargo update",
+  "customizations": {
+    "github.com/rradczewski/kata-bootstraps": {
+      "failingTestVerification": "cargo test | tee /dev/stderr | grep -q 'test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s'"
+    }
+  },
+  "workspaceFolder": "/workspaces/kata-bootstraps/rust",
+  "workspaceMount": "type=bind,source=${localWorkspaceFolder}/rust,target=/workspaces/kata-bootstraps/rust"
+}
