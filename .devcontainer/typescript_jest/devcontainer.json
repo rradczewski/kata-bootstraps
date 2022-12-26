@@ -1,0 +1,13 @@
+{
+  "name": "NodeJS",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:18-bullseye",
+  "remoteUser": "node",
+  "onCreateCommand": "npm install",
+  "customizations": {
+    "github.com/rradczewski/kata-bootstraps": {
+      "failingTestVerification": "CI=1 npm test 2>&1 | tee /dev/stderr | grep -q 'Tests:       1 failed, 1 total'"
+    }
+  },
+  "workspaceFolder": "/workspaces/kata-bootstraps/typescript_jest",
+  "workspaceMount": "type=bind,source=${localWorkspaceFolder}/typescript_jest,target=/workspaces/kata-bootstraps/typescript_jest"
+}

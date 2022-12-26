@@ -1,0 +1,13 @@
+{
+  "name": "Ruby",
+  "image": "mcr.microsoft.com/devcontainers/ruby:3.1",
+  "remoteUser": "vscode",
+  "onCreateCommand": "bundle install",
+  "customizations": {
+    "github.com/rradczewski/kata-bootstraps": {
+      "failingTestVerification": "bundle exec rspec | tee /dev/stderr | grep -q '1 example, 1 failure'"
+    }
+  },
+  "workspaceFolder": "/workspaces/kata-bootstraps/ruby_rspec",
+  "workspaceMount": "type=bind,source=${localWorkspaceFolder}/ruby_rspec,target=/workspaces/kata-bootstraps/ruby_rspec"
+}

@@ -1,0 +1,13 @@
+{
+  "name": "Python3",
+  "image": "mcr.microsoft.com/devcontainers/python:3.11",
+  "remoteUser": "vscode",
+  "onCreateCommand": "pipenv install",
+  "customizations": {
+    "github.com/rradczewski/kata-bootstraps": {
+      "failingTestVerification": "pipenv run pytest | tee /dev/stderr | grep -q '1 failed in'"
+    }
+  },
+  "workspaceFolder": "/workspaces/kata-bootstraps/python_pytest",
+  "workspaceMount": "type=bind,source=${localWorkspaceFolder}/python_pytest,target=/workspaces/kata-bootstraps/python_pytest"
+}

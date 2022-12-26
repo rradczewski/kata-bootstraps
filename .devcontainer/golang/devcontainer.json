@@ -1,0 +1,13 @@
+{
+  "name": "Go",
+  "image": "mcr.microsoft.com/devcontainers/go:1.19",
+  "remoteUser": "vscode",
+  "onCreateCommand": "go get && go mod download && go install github.com/onsi/ginkgo/v2/ginkgo",
+  "customizations": {
+    "github.com/rradczewski/kata-bootstraps": {
+      "failingTestVerification": "ginkgo | tee /dev/stderr | grep -q 'FAIL: TestApp'"
+    }
+  },
+  "workspaceFolder": "/workspaces/kata-bootstraps/golang",
+  "workspaceMount": "type=bind,source=${localWorkspaceFolder}/golang,target=/workspaces/kata-bootstraps/golang"
+}
