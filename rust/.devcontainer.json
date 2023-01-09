@@ -7,6 +7,22 @@
     "github.com/rradczewski/kata-bootstraps": {
       "failingTestVerification": "cargo test | tee /dev/stderr | grep -q 'test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s'",
       "languageLogo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rust/rust-plain.svg"
+    },
+    "vscode": {
+      "settings": {
+        "lldb.executable": "/usr/bin/lldb",
+        "files.watcherExclude": {
+          "**/target/**": true
+        },
+        "rust-analyzer.checkOnSave.command": "clippy"
+      },
+      "extensions": [
+        "vadimcn.vscode-lldb",
+        "mutantdino.resourcemonitor",
+        "rust-lang.rust-analyzer",
+        "tamasfe.even-better-toml",
+        "serayuzgur.crates"
+      ]
     }
   }
 }
