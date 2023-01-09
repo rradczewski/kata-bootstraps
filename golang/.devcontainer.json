@@ -8,5 +8,15 @@
       "failingTestVerification": "ginkgo | tee /dev/stderr | grep -q 'FAIL: TestApp'",
       "languageLogo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original-wordmark.svg"
     }
+    "vscode": {
+      "settings": {
+        "go.toolsManagement.checkForUpdates": "local",
+        "go.useLanguageServer": true,
+        "go.gopath": "/go"
+      },
+      "extensions": [
+        "golang.Go"
+      ]
+    }
   }
 }
