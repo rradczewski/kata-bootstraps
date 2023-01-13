@@ -11,6 +11,11 @@
     "github.com/rradczewski/kata-bootstraps": {
       "failingTestVerification": "./gradlew test 2>&1 | tee /dev/stderr | grep -q '1 test completed, 1 failed'",
       "languageLogo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg"
+    },
+    "vscode": {
+      "extensions": [
+        "vscjava.vscode-java-pack"
+      ]
     }
   },
   "workspaceFolder": "/workspaces/kata-bootstraps/kotlin_kotlintest",
