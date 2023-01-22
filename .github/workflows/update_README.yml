@@ -1,18 +1,14 @@
-name: Update Codespace Devcontainers
+name: Update README
 
 on:
   workflow_dispatch:
   push:
-    paths:
-    - '**/devcontainer.json'
-    - '**/.devcontainer.json'
-    - '!.devcontainer'
     branches:
-    - 'main'
+      - "main"
 
 jobs:
   transform:
-    name: Find all Bootstraps and copy their devcontainer to the rootfolder
+    name: Generate new README and commit to repository
     runs-on: ubuntu-latest
     steps:
       - uses: actions/setup-node@v3
@@ -23,13 +19,13 @@ jobs:
         working-directory: .bin/
         run: npm install
       - run: |
-          ./.bin/transform_and_copy_devcontainers_for_codespaces.sh
-      - name: Commit new devcontainers
+          node ./.bin/generate_README.js | tee ./README.md
+      - name: Commit new README
         run: |
           git config --global user.name 'Github Action'
           git config --global user.email 'githubaction@users.noreply.github.com'
           set +e
-          git add .devcontainer/ 
-          git commit -m "[meta] Update codespace .devcontainers"
+          git add README.md
+          git commit -m "[meta] Update README"
           set -e
           git push
