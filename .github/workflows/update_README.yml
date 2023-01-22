@@ -27,5 +27,6 @@ jobs:
           set +e
           git add README.md
           git commit -m "[meta] Update README"
+          git pull origin --rebase main
           set -e
           git push
