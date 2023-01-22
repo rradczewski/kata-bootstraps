@@ -9,6 +9,10 @@ buildscript {
 
 apply plugin: 'kotlin'
 
+kotlin {
+    jvmToolchain(18)
+}
+
 test {
     useJUnitPlatform()
 }
