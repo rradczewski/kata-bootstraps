@@ -1,5 +1,5 @@
 {
-  "name": "Java",
+  "name": "Kotlin",
   "build": {
     "dockerfile": "${localWorkspaceFolder}/kotlin_kotlintest/.devcontainer/Dockerfile"
   },

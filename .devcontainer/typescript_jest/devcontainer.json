@@ -1,5 +1,5 @@
 {
-  "name": "NodeJS",
+  "name": "Typescript",
   "image": "mcr.microsoft.com/devcontainers/javascript-node:18-bullseye",
   "remoteUser": "node",
   "onCreateCommand": "npm install",
