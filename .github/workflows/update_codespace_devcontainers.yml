@@ -19,6 +19,8 @@ jobs:
         with:
           node-version: lts/*
       - uses: actions/checkout@v3
+        with:
+          ref: main
       - name: Install Dev Tools
         working-directory: .bin/
         run: npm install
