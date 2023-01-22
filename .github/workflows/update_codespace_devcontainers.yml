@@ -31,5 +31,6 @@ jobs:
           set +e
           git add .devcontainer/ 
           git commit -m "[meta] Update codespace .devcontainers"
+          git pull origin --rebase main
           set -e
           git push
