@@ -39,7 +39,7 @@ jobs:
         with:
           node-version: lts/*
       - uses: actions/checkout@v3
-      - name: Install Devcontainers CLI
+      - name: Install Dev Tools
         working-directory: .bin/
         run: npm install
       - name: Set up container for ${{ matrix.bootstrap }}
