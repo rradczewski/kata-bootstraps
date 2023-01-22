@@ -61,6 +61,17 @@
       "depNameTemplate": "eclipse-temurin",
       "datasourceTemplate": "docker",
       "versioningTemplate": "regex:(?<major>\\d+).*"
+    },
+    {
+      "fileMatch": [
+        "(^|/|\\.)build\\.gradle$"
+      ],
+      "matchStrings": [
+        "jvmToolchain\\((?<currentValue>.*?)\\)"
+      ],
+      "depNameTemplate": "eclipse-temurin",
+      "datasourceTemplate": "docker",
+      "versioningTemplate": "regex:(?<major>\\d+).*"
     }
   ]
 }
