@@ -3,11 +3,14 @@
 
 <body>
     <script type="application/javascript">
+        const navigateBack = function () {
+            window.history.length > 1 && window.history.back();
+            window.removeEventListener("mousemove", navigateBack);
+        }
         document.addEventListener("DOMContentLoaded", function () {
             const params = new URLSearchParams(window.location.search);
-
-            window.open(params.get("url"), "_blank");
-            window.history.back();
+            window.location.assign(params.get("url"));
+            window.addEventListener("mousemove", navigateBack);
         });
     </script>
 </body>
