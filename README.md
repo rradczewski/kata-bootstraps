@@ -1,6 +1,6 @@
 # Curated Kata Bootstrap Projects
 
-This repository contains curated starter projects for running katas. All projects are kept up-to-date automatically by [renovate](https://github.com/renovatebot/) and are based on [devcontainers](https://code.visualstudio.com/docs/remote/containers).
+This repository contains curated starter projects for running katas. All projects are kept up-to-date automatically by [renovate](https://github.com/renovatebot/) and are based on [devcontainers](https://code.visualstudio.com/docs/remote/containers). All languages exist in folders (e.g. `./java_junit5`), and branches that are kept in sync through Github Actions.
 
 [Clone repository in IntelliJ](https://rradczewski.github.io/kata-bootstraps/redirect.html?url=jetbrains%3A%2F%2Fidea%2Fcheckout%2Fgit%3Fidea.required.plugins.id%3DGit4Idea%26checkout.repo%3Dhttps%253A%252F%252Fgitlab.com%252Fwith-humans%252Fdevops-workshop%252Finfrastructure.git%26checkout.repo%3Dhttps%253A%252F%252Fgithub.com%252Frradczewski%252Fkata-bootstraps.git) (requires [Jetbrains Toolbox](https://www.jetbrains.com/lp/toolbox/)) and select your language either by opening one of the subfolders as a project or by switching the branch.
 
@@ -27,10 +27,10 @@ Any bootstrap project may be added to this repository, if:
 - Dependencies and docker images are well-known and commonly used
     - Avoids using custom Dockerfile-based dev-containers
     - Uses only one testing framework and one assertion library
-- A single failing test exists
+- One failing, and one succeeding test exists
 - Version numbers are either `latest` or [renovate](https://github.com/renovatebot/) can pick them up automatically (e.g. don't use variables in `pom.xml` or elsewhere).
 
-A bootstrap needs to contain a valid [`.devcontainer.json`](./java_junit5/.devcontainer/devcontainer.json) that configures a container with all appropriate tooling. Furthermore, the `postCreateCommand` needs to contain a shell command that, when executed, will verify that the test runner correctly runs and reports the single failure present.
+A bootstrap needs to contain a valid [`.devcontainer.json`](./java_junit5/.devcontainer/devcontainer.json) that configures a container with all appropriate tooling. Furthermore, the `postCreateCommand` needs to contain a shell command that, when executed, will verify that the test runner correctly runs and reports that two tests ran and one of them failed.
 
 ## Other kata bootstraps
 
