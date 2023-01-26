@@ -6,7 +6,8 @@
         document.addEventListener("DOMContentLoaded", function () {
             const params = new URLSearchParams(window.location.search);
 
-            window.location.replace(params.get("url"));
+            window.open(params.get("url"), "_blank");
+            window.history.back();
         });
     </script>
 </body>
