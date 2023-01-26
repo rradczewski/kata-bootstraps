@@ -1,0 +1,5 @@
+image:
+  file: .devcontainer/Dockerfile
+tasks:
+  - name: Init
+    init: mix deps.get && mix compile
