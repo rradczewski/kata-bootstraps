@@ -74,7 +74,7 @@ const renderLanguage = async (directory) => {
 
   return (
     `| <a alt="${devcontainerSpec.configuration.name}" href="./${actualDirectory}"><img width="100px" src="${kataCustomization.languageLogo}" /></a> ` +
-    `| ${devcontainerSpec.configuration.name} ` +
+    `| [${devcontainerSpec.configuration.name}](./${actualDirectory}) ` +
     `| ${kataCustomization.resources
       .map((res) => `[${res.name}](${res.url})`)
       .join("<br/>")} ` +
