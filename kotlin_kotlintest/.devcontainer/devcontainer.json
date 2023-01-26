@@ -9,7 +9,7 @@
   "remoteUser": "java",
   "customizations": {
     "github.com/rradczewski/kata-bootstraps": {
-      "failingTestVerification": "./gradlew test 2>&1 | tee /dev/stderr | grep -q '1 test completed, 1 failed'",
+      "failingTestVerification": "./gradlew test 2>&1 | tee /dev/stderr | grep -q '2 tests completed, 1 failed'",
       "languageLogo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg"
     },
     "vscode": {
