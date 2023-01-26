@@ -5,4 +5,8 @@ class ApplicationSpec : StringSpec() { init {
     "it should fail" {
         true shouldBe false
     }
+
+    "it should succeed" {
+        true shouldBe true
+    }
 }}

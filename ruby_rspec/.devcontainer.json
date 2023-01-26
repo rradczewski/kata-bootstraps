@@ -5,7 +5,7 @@
   "onCreateCommand": "bundle install",
   "customizations": {
     "github.com/rradczewski/kata-bootstraps": {
-      "failingTestVerification": "bundle exec rspec | tee /dev/stderr | grep -q '1 example, 1 failure'",
+      "failingTestVerification": "bundle exec rspec | tee /dev/stderr | grep -q '2 examples, 1 failure'",
       "languageLogo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ruby/ruby-original.svg"
     },
     "vscode": {

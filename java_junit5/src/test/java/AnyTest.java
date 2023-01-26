@@ -8,4 +8,9 @@ public class AnyTest {
     void it_fails() {
         assertThat(false).isTrue();
     }
+
+    @Test
+    void it_succeeds() {
+        assertThat(true).isTrue();
+    }
 }
