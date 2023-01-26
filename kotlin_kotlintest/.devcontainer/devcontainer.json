@@ -10,7 +10,18 @@
   "customizations": {
     "github.com/rradczewski/kata-bootstraps": {
       "failingTestVerification": "./gradlew test 2>&1 | tee /dev/stderr | grep -q '2 tests completed, 1 failed'",
-      "languageLogo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg"
+      "testCommand": "./gradlew test",
+      "languageLogo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg",
+      "resources": [
+        {
+          "name": "Kotlin Reference",
+          "url": "https://kotlinlang.org/docs/home.html"
+        },
+        {
+          "name": "Kotest Reference",
+          "url": "https://kotest.io/docs/quickstart"
+        }
+      ]
     },
     "vscode": {
       "extensions": [

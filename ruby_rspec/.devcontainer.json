@@ -6,11 +6,21 @@
   "customizations": {
     "github.com/rradczewski/kata-bootstraps": {
       "failingTestVerification": "bundle exec rspec | tee /dev/stderr | grep -q '2 examples, 1 failure'",
-      "languageLogo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ruby/ruby-original.svg"
+      "testCommand": "bundle exec rspec",
+      "languageLogo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ruby/ruby-original.svg",
+      "resources": [
+        {
+          "name": "Ruby Reference",
+          "url": "https://www.ruby-lang.org/en/documentation/"
+        },
+        {
+          "name": "RSpec Reference",
+          "url": "https://rspec.info/"
+        }
+      ]
     },
     "vscode": {
-      "extensions": [
-      ]
+      "extensions": []
     }
   }
 }

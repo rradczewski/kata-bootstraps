@@ -2,6 +2,7 @@ const path = require("path");
 const { URL } = require("url");
 const { runDevcontainerCliInFolder } = require("./_devcontainer");
 const { languages } = require("./_languages");
+const { writeFile } = require("fs/promises");
 
 const DEVCONTAINER_SPEC_EXTENSION = "github.com/rradczewski/kata-bootstraps";
 const ROOT_DIR = path.resolve(__dirname, "../");
@@ -41,12 +42,8 @@ const wrapInRedirect = (url) => {
 const renderLanguages = async () => {
   const directories = await languages(ROOT_DIR);
 
-  return Promise.allSettled(directories.map((dir) => renderLanguage(dir))).then(
-    (results) =>
-      results
-        .filter((result) => result.status === "fulfilled")
-        .map((result) => result.value)
-        .join("\n")
+  return Promise.all(directories.map((dir) => renderLanguage(dir))).then(
+    (results) => results.join("\n")
   );
 };
 
@@ -78,6 +75,10 @@ const renderLanguage = async (directory) => {
   return (
     `| <a alt="${devcontainerSpec.configuration.name}" href="./${actualDirectory}"><img width="100px" src="${kataCustomization.languageLogo}" /></a> ` +
     `| ${devcontainerSpec.configuration.name} ` +
+    `| ${kataCustomization.resources
+      .map((res) => `[${res.name}](${res.url})`)
+      .join("<br/>")} ` +
+    `| \`${kataCustomization.testCommand}\` ` +
     `| [Open in GitHub Codespace](${openAsCodespaceUrl})<br/>[Open in GitPod.io](${openInGitpodIoUrl})<br/>[Open locally in VSCode](${wrappedOpenInVsCodeUrl})`
   );
 };
@@ -91,8 +92,8 @@ This repository contains curated starter projects for running katas. All project
     OPEN_IN_INTELLIJ
   )}) (requires [Jetbrains Toolbox](https://www.jetbrains.com/lp/toolbox/)) and select your language either by opening one of the subfolders as a project or by switching the branch.
 
-|   |   |   |
-|---|---|---|
+|   | Language  | Resources | Test Command | Quick Start |
+|---|---|---|---|---|
 ${await renderLanguages()}
 
 ## Contributing a bootstrap
@@ -116,7 +117,9 @@ A bootstrap needs to contain a valid [\`.devcontainer.json\`](./java_junit5/.dev
 `;
 
 const run = async () => {
-  console.log(await layout());
+  const content = await layout();
+  console.log(content);
+  return writeFile(path.join(ROOT_DIR, "README.md"), content);
 };
 
 run();
