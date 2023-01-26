@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <script type="application/javascript">
+        document.addEventListener("DOMContentLoaded", function () {
+            const params = new URLSearchParams(window.location.search);
+
+            window.location.replace(params.get("url"));
+        });
+    </script>
+</body>
+
+</html>
