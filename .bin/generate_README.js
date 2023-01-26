@@ -13,6 +13,8 @@ OPEN_IN_CODESPACE_URL.searchParams.append(
   "rradczewski/kata-bootstraps"
 );
 
+const OPEN_IN_GITPOD_URL = new URL("https://gitpod.io/");
+
 const OPEN_IN_VSCODE_URL = new URL("vscode://vscode.git/clone");
 OPEN_IN_VSCODE_URL.searchParams.append(
   "url",
@@ -69,10 +71,14 @@ const renderLanguage = async (directory) => {
   openInVsCodeUrl.searchParams.append("ref", actualDirectory);
   const wrappedOpenInVsCodeUrl = wrapInRedirect(openInVsCodeUrl);
 
+  const openInGitpodIoUrl = new URL(OPEN_IN_GITPOD_URL);
+  openInGitpodIoUrl.hash =
+    "https://github.com/rradczewski/kata-bootstraps/tree/" + actualDirectory;
+
   return (
     `| <a alt="${devcontainerSpec.configuration.name}" href="./${actualDirectory}"><img width="100px" src="${kataCustomization.languageLogo}" /></a> ` +
     `| ${devcontainerSpec.configuration.name} ` +
-    `| [Open in GitHub Codespace](${openAsCodespaceUrl})<br/>[Open in VSCode (locally)](${wrappedOpenInVsCodeUrl})`
+    `| [Open in GitHub Codespace](${openAsCodespaceUrl})<br/>[Open in GitPod.io](${openInGitpodIoUrl})<br/>[Open locally in VSCode](${wrappedOpenInVsCodeUrl})`
   );
 };
 
@@ -83,7 +89,7 @@ This repository contains curated starter projects for running katas. All project
 
 [Clone repository in IntelliJ](${wrapInRedirect(
     OPEN_IN_INTELLIJ
-  )}) (requires [Jetbrains Toolbox](https://www.jetbrains.com/lp/toolbox/))
+  )}) (requires [Jetbrains Toolbox](https://www.jetbrains.com/lp/toolbox/)) and select your language either by opening one of the subfolders as a project or by switching the branch.
 
 |   |   |   |
 |---|---|---|
