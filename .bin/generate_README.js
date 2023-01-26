@@ -33,6 +33,15 @@ OPEN_IN_INTELLIJ.searchParams.append(
   "https://github.com/rradczewski/kata-bootstraps.git"
 );
 
+const REDIRECT_URL = new URL(
+  "https://rradczewski.github.io/kata-bootstraps/redirect.html"
+);
+const wrapInRedirect = (url) => {
+  const redirectUrl = new URL(REDIRECT_URL);
+  redirectUrl.searchParams.append("url", url);
+  return redirectUrl;
+};
+
 const execFileAsync = (cmd, args, options) =>
   new Promise((resolve, reject) => {
     execFile(cmd, args, options, (e, stdout, stderr) => {
@@ -81,11 +90,12 @@ const renderLanguage = async (directory) => {
 
   const openInVsCodeUrl = new URL(OPEN_IN_VSCODE_URL);
   openInVsCodeUrl.searchParams.append("ref", actualDirectory);
+  const wrappedOpenInVsCodeUrl = wrapInRedirect(openInVsCodeUrl);
 
   return (
     `| <a alt="${devcontainerSpec.configuration.name}" href="./${actualDirectory}"><img width="100px" src="${kataCustomization.languageLogo}" /></a> ` +
     `| ${devcontainerSpec.configuration.name} ` +
-    `| [Open in GitHub Codespace](${openAsCodespaceUrl})<br/>[Open in VSCode (locally)](${openInVsCodeUrl})`
+    `| [Open in GitHub Codespace](${openAsCodespaceUrl})<br/>[Open in VSCode (locally)](${wrappedOpenInVsCodeUrl})`
   );
 };
 
@@ -94,7 +104,9 @@ const layout = async (l) =>
 
 This repository contains curated starter projects for running katas. All projects are kept up-to-date automatically by [renovate](https://github.com/renovatebot/) and are based on [devcontainers](https://code.visualstudio.com/docs/remote/containers).
 
-[Clone repository in IntelliJ](${OPEN_IN_INTELLIJ}) (requires [Jetbrains Toolbox](https://www.jetbrains.com/lp/toolbox/))
+[Clone repository in IntelliJ](${wrapInRedirect(
+    OPEN_IN_INTELLIJ
+  )}) (requires [Jetbrains Toolbox](https://www.jetbrains.com/lp/toolbox/))
 
 |   |   |   |
 |---|---|---|
