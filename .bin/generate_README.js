@@ -14,10 +14,23 @@ const DEVCONTAINER_CLI = path.resolve(
 
 const OPEN_IN_CODESPACE_URL = new URL("https://github.com/codespaces/new");
 OPEN_IN_CODESPACE_URL.searchParams.append("hide_repo_select", "true");
-OPEN_IN_CODESPACE_URL.searchParams.append("ref", "main");
 OPEN_IN_CODESPACE_URL.searchParams.append(
   "repo",
   "rradczewski/kata-bootstraps"
+);
+
+const OPEN_IN_VSCODE_URL = new URL("vscode://vscode.git/clone");
+OPEN_IN_VSCODE_URL.searchParams.append(
+  "url",
+  "https://github.com/rradczewski/kata-bootstraps.git"
+);
+
+const OPEN_IN_INTELLIJ = new URL(
+  "jetbrains://idea/checkout/git?idea.required.plugins.id=Git4Idea&checkout.repo=https%3A%2F%2Fgitlab.com%2Fwith-humans%2Fdevops-workshop%2Finfrastructure.git"
+);
+OPEN_IN_INTELLIJ.searchParams.append(
+  "checkout.repo",
+  "https://github.com/rradczewski/kata-bootstraps.git"
 );
 
 const execFileAsync = (cmd, args, options) =>
@@ -30,16 +43,17 @@ const execFileAsync = (cmd, args, options) =>
 
 const languages = async () => {
   const directories = (
-    await fs.readdir(path.resolve(ROOT_DIR, ".devcontainer"), {
+    await fs.readdir(path.resolve(ROOT_DIR), {
       withFileTypes: true,
     })
   )
     .filter((entry) => entry.isDirectory() && !entry.name.startsWith("."))
-    .map((dirent) => path.resolve(ROOT_DIR, ".devcontainer", dirent.name));
+    .map((dirent) => path.resolve(ROOT_DIR, dirent.name));
 
   return Promise.allSettled(directories.map((dir) => renderLanguage(dir))).then(
     (results) =>
       results
+        //.map(results => { console.log(results); return results; })
         .filter((result) => result.status === "fulfilled")
         .map((result) => result.value)
         .join("\n")
@@ -49,8 +63,6 @@ const languages = async () => {
 const renderLanguage = async (directory) => {
   const { stdout } = await execFileAsync(DEVCONTAINER_CLI, [
     "read-configuration",
-    "--config",
-    path.resolve(directory, "devcontainer.json"),
     "--workspace-folder",
     directory,
   ]);
@@ -65,18 +77,24 @@ const renderLanguage = async (directory) => {
     devcontainerSpec.configuration.customizations[DEVCONTAINER_SPEC_EXTENSION];
 
   const openAsCodespaceUrl = new URL(OPEN_IN_CODESPACE_URL);
-  openAsCodespaceUrl.searchParams.append(
-    "devcontainer_path",
-    path.relative(ROOT_DIR, devcontainerSpec.configuration.configFilePath.path)
-  );
+  openAsCodespaceUrl.searchParams.append("ref", actualDirectory);
 
-  return `| <a alt="${devcontainerSpec.configuration.name}" href="./${actualDirectory}"><img width="100px" src="${kataCustomization.languageLogo}" /></a> | ${devcontainerSpec.configuration.name} | [Open in Codespace](${openAsCodespaceUrl})`;
+  const openInVsCodeUrl = new URL(OPEN_IN_VSCODE_URL);
+  openInVsCodeUrl.searchParams.append("ref", actualDirectory);
+
+  return (
+    `| <a alt="${devcontainerSpec.configuration.name}" href="./${actualDirectory}"><img width="100px" src="${kataCustomization.languageLogo}" /></a> ` +
+    `| ${devcontainerSpec.configuration.name} ` +
+    `| [Open in GitHub Codespace](${openAsCodespaceUrl})<br/>[Open in VSCode (locally)](${openInVsCodeUrl})`
+  );
 };
 
 const layout = async (l) =>
   `# Curated Kata Bootstrap Projects
 
 This repository contains curated starter projects for running katas. All projects are kept up-to-date automatically by [renovate](https://github.com/renovatebot/) and are based on [devcontainers](https://code.visualstudio.com/docs/remote/containers).
+
+[Clone repository in IntelliJ](${OPEN_IN_INTELLIJ}) (requires [Jetbrains Toolbox](https://www.jetbrains.com/lp/toolbox/))
 
 |   |   |   |
 |---|---|---|
