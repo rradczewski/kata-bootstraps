@@ -6,7 +6,22 @@
   "customizations": {
     "github.com/rradczewski/kata-bootstraps": {
       "failingTestVerification": "dotnet test | tee /dev/stderr | grep -q 'Failed!  - Failed:     1, Passed:     1, Skipped:     0, Total:     2'",
-      "languageLogo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg"
+      "testCommand": "dotnet test",
+      "languageLogo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg",
+      "resources": [
+        {
+          "name": "C# Reference",
+          "url": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/"
+        },
+        {
+          "name": "Dotnet Reference",
+          "url": "https://learn.microsoft.com/en-us/dotnet/api/"
+        },
+        {
+          "name": "Fluent Assertions",
+          "url": "https://fluentassertions.com/introduction"
+        }
+      ]
     },
     "vscode": {
       "extensions": [

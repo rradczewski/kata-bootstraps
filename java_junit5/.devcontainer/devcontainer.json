@@ -10,7 +10,22 @@
   "customizations": {
     "github.com/rradczewski/kata-bootstraps": {
       "failingTestVerification": "mvn test | tee /dev/stderr | grep -q 'Tests run: 2, Failures: 1, Errors: 0, Skipped: 0'",
-      "languageLogo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
+      "testCommand": "mvn test",
+      "languageLogo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
+      "resources": [
+        {
+          "name": "Java Reference",
+          "url": "https://www.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=javaselatest"
+        },
+        {
+          "name": "AssertJ Reference",
+          "url": "https://assertj.github.io/doc/"
+        },
+        {
+          "name": "Mockito Reference",
+          "url": "https://javadoc.io/doc/org.mockito/mockito-core/latest/org/mockito/Mockito.html"
+        }
+      ]
     },
     "vscode": {
       "extensions": [

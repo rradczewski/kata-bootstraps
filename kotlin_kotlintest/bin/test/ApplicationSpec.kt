@@ -1,12 +1,9 @@
-import io.kotlintest.shouldBe
-import io.kotlintest.specs.StringSpec
+import io.kotest.core.spec.style.StringSpec
+import io.kotest.matchers.shouldBe
 
-class ApplicationSpec : StringSpec() { init {
-    "it should fail" {
-        true shouldBe false
-    }
+class ApplicationSpec :
+        StringSpec({
+            "it should fail" { true shouldBe false }
 
-    "it should succeed" {
-        true shouldBe true
-    }
-}}
+            "it should succeed" { true shouldBe true }
+        })

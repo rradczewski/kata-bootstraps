@@ -6,7 +6,22 @@
   "customizations": {
     "github.com/rradczewski/kata-bootstraps": {
       "failingTestVerification": "CI=1 npm test 2>&1 | tee /dev/stderr | grep -q 'Tests:       1 failed, 1 passed, 2 total'",
-      "languageLogo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
+      "testCommand": "npm test",
+      "languageLogo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
+      "resources": [
+        {
+          "name": "TypeScript Reference",
+          "url": "https://www.typescriptlang.org/docs/handbook/intro.html"
+        },
+        {
+          "name": "NodeJS Reference",
+          "url": "https://nodejs.org/api/"
+        },
+        {
+          "name": "Jest Reference",
+          "url": "https://jestjs.io/docs/getting-started"
+        }
+      ]
     }
   }
 }

@@ -6,7 +6,22 @@
   "customizations": {
     "github.com/rradczewski/kata-bootstraps": {
       "failingTestVerification": "ginkgo | tee /dev/stderr | grep -zPq '(?s)FAIL: TestFails.*PASS: TestSucceeds'",
-      "languageLogo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original-wordmark.svg"
+      "testCommand": "ginkgo",
+      "languageLogo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original-wordmark.svg",
+      "resources": [
+        {
+          "name": "Go Reference",
+          "url": "https://go.dev/doc/"
+        },
+        {
+          "name": "Ginkgo Test Runner",
+          "url": "https://onsi.github.io/ginkgo/"
+        },
+        {
+          "name": "Testify Assertions",
+          "url": "https://github.com/stretchr/testify/"
+        }
+      ]
     },
     "vscode": {
       "settings": {

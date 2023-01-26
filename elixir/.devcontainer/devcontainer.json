@@ -16,7 +16,18 @@
   "customizations": {
     "github.com/rradczewski/kata-bootstraps": {
       "failingTestVerification": "mix test | tee /dev/stderr | grep -q '2 tests, 1 failure'",
-      "languageLogo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/elixir/elixir-original.svg"
+      "testCommand": "mix test",
+      "languageLogo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/elixir/elixir-original.svg",
+      "resources": [
+        {
+          "name": "elixir Reference",
+          "url": "https://elixir-lang.org/docs.html"
+        },
+        {
+          "name": "ExUnit Reference",
+          "url": "https://hexdocs.pm/ex_unit/ExUnit.html"
+        }
+      ]
     }
   }
 }

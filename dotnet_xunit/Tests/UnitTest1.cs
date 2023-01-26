@@ -1,16 +1,18 @@
 namespace Tests;
 
+using FluentAssertions;
+
 public class UnitTest1
 {
     [Fact]
     public void Test_Fails()
     {
-        Assert.True(false);
+        true.Should().BeFalse();
     }
 
     [Fact]
     public void Test_Succeeds()
     {
-        Assert.True(true);
+        true.Should().BeTrue();
     }
 }

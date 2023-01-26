@@ -47,14 +47,18 @@ jobs:
       - name: Install Dev Tools
         working-directory: .bin/
         run: npm install
-      - run: |
-          node ./.bin/generate_README.js | tee ./README.md
+      - name: Main README
+        run: |
+          node ./.bin/generate_README.js
+      - name: Language READMes
+        run: |
+          node ./.bin/generate_language_READMEs.js
       - name: Commit new README
         run: |
           git config --global user.name 'Github Action'
           git config --global user.email 'githubaction@users.noreply.github.com'
           set +e
-          git add README.md
+          git add README.md **/README.md
           git commit -m "[meta] Update README"
           git pull origin --rebase main
           set -e
