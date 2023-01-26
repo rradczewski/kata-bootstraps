@@ -7,34 +7,7 @@ on:
       - "main"
 
 jobs:
-  generate_codespace:
-    name: Find all Bootstraps and copy their devcontainer to the rootfolder
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/setup-node@v3
-        with:
-          node-version: lts/*
-      - uses: actions/checkout@v3
-        with:
-          ref: main
-      - name: Install Dev Tools
-        working-directory: .bin/
-        run: npm install
-      - run: |
-          ./.bin/transform_and_copy_devcontainers_for_codespaces.sh
-      - name: Commit new devcontainers
-        run: |
-          git config --global user.name 'Github Action'
-          git config --global user.email 'githubaction@users.noreply.github.com'
-          set +e
-          git add .devcontainer/ 
-          git commit -m "[meta] Update codespace .devcontainers"
-          git pull origin --rebase main
-          set -e
-          git push
-
   generate_readme:
-    needs: [generate_codespace]
     name: Generate new README and commit to repository
     runs-on: ubuntu-latest
     steps:
@@ -59,3 +32,20 @@ jobs:
           git pull origin --rebase main
           set -e
           git push
+
+  generate_language_branches:
+    needs: [generate_readme]  
+    name: Force-push subtrees for all languages
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-node@v3
+        with:
+          node-version: lts/*
+      - uses: actions/checkout@v3
+        with:
+          ref: main
+      - name: Install Dev Tools
+        working-directory: .bin/
+        run: npm install
+      - run: |
+          ./.bin/update_and_force_push_language_branches.sh
