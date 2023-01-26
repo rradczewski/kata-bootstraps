@@ -1,16 +1,10 @@
-const fs = require("fs/promises");
 const path = require("path");
-const { execFile } = require("child_process");
 const { URL } = require("url");
+const { runDevcontainerCliInFolder } = require("./_devcontainer");
+const { languages } = require("./_languages");
 
 const DEVCONTAINER_SPEC_EXTENSION = "github.com/rradczewski/kata-bootstraps";
 const ROOT_DIR = path.resolve(__dirname, "../");
-const DEVCONTAINER_CLI = path.resolve(
-  __dirname,
-  "node_modules/",
-  ".bin/",
-  "devcontainer"
-);
 
 const OPEN_IN_CODESPACE_URL = new URL("https://github.com/codespaces/new");
 OPEN_IN_CODESPACE_URL.searchParams.append("hide_repo_select", "true");
@@ -42,27 +36,12 @@ const wrapInRedirect = (url) => {
   return redirectUrl;
 };
 
-const execFileAsync = (cmd, args, options) =>
-  new Promise((resolve, reject) => {
-    execFile(cmd, args, options, (e, stdout, stderr) => {
-      if (e) return reject(e);
-      return resolve({ stdout, stderr });
-    });
-  });
-
-const languages = async () => {
-  const directories = (
-    await fs.readdir(path.resolve(ROOT_DIR), {
-      withFileTypes: true,
-    })
-  )
-    .filter((entry) => entry.isDirectory() && !entry.name.startsWith("."))
-    .map((dirent) => path.resolve(ROOT_DIR, dirent.name));
+const renderLanguages = async () => {
+  const directories = await languages(ROOT_DIR);
 
   return Promise.allSettled(directories.map((dir) => renderLanguage(dir))).then(
     (results) =>
       results
-        //.map(results => { console.log(results); return results; })
         .filter((result) => result.status === "fulfilled")
         .map((result) => result.value)
         .join("\n")
@@ -70,10 +49,8 @@ const languages = async () => {
 };
 
 const renderLanguage = async (directory) => {
-  const { stdout } = await execFileAsync(DEVCONTAINER_CLI, [
+  const { stdout } = await runDevcontainerCliInFolder(directory, [
     "read-configuration",
-    "--workspace-folder",
-    directory,
   ]);
 
   const devcontainerSpec = JSON.parse(stdout);
@@ -110,7 +87,7 @@ This repository contains curated starter projects for running katas. All project
 
 |   |   |   |
 |---|---|---|
-${await languages()}
+${await renderLanguages()}
 
 ## Contributing a bootstrap
 
