@@ -18,7 +18,7 @@ test {
 }
 
 dependencies {
-    testImplementation 'io.kotest:kotest-runner-junit5:5.5.4'
+    testImplementation 'io.kotest:kotest-runner-junit5:5.5.5'
     implementation "org.jetbrains.kotlin:kotlin-stdlib:1.8.10"
 }
 repositories {
