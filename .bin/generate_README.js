@@ -3,6 +3,7 @@ const { URL } = require("url");
 const { runDevcontainerCliInFolder } = require("./_devcontainer");
 const { languages } = require("./_languages");
 const { writeFile } = require("fs/promises");
+const { resolveLanguageLogo } = require("./_language_logo");
 
 const DEVCONTAINER_SPEC_EXTENSION = "github.com/rradczewski/kata-bootstraps";
 const ROOT_DIR = path.resolve(__dirname, "../");
@@ -53,6 +54,9 @@ const renderLanguage = async (directory) => {
   ]);
 
   const devcontainerSpec = JSON.parse(stdout);
+  const devcontainerJsonPath = path.dirname(
+    devcontainerSpec.configuration.configFilePath.path
+  );
 
   const actualDirectory = path.basename(
     devcontainerSpec.workspace.workspaceFolder
@@ -60,6 +64,12 @@ const renderLanguage = async (directory) => {
 
   const kataCustomization =
     devcontainerSpec.configuration.customizations[DEVCONTAINER_SPEC_EXTENSION];
+
+  const logoUrl = resolveLanguageLogo(
+    kataCustomization.languageLogo,
+    '.',
+    devcontainerJsonPath
+  );
 
   const openAsCodespaceUrl = new URL(OPEN_IN_CODESPACE_URL);
   openAsCodespaceUrl.searchParams.append("ref", actualDirectory);
@@ -73,7 +83,7 @@ const renderLanguage = async (directory) => {
     "https://github.com/rradczewski/kata-bootstraps/tree/" + actualDirectory;
 
   return (
-    `| <a alt="${devcontainerSpec.configuration.name}" href="./${actualDirectory}"><img width="100px" src="${kataCustomization.languageLogo}" /></a> ` +
+    `| <a alt="${devcontainerSpec.configuration.name}" href="./${actualDirectory}"><img width="100px" src="${logoUrl}" /></a> ` +
     `| [${devcontainerSpec.configuration.name}](./${actualDirectory}) ` +
     `| ${kataCustomization.resources
       .map((res) => `[${res.name}](${res.url})`)
