@@ -96,7 +96,7 @@ const renderLanguage = async (directory) => {
 const layout = async (l) =>
   `# Curated Kata Bootstrap Projects
 
-This repository contains curated starter projects for running katas. All projects are kept up-to-date automatically by [renovate](https://github.com/renovatebot/) and are based on [devcontainers](https://code.visualstudio.com/docs/remote/containers). All languages exist in folders (e.g. \`./java_junit5\`), and branches that are kept in sync through Github Actions.
+This repository contains curated starter projects for running katas. All projects are kept up-to-date automatically by [renovate](https://github.com/renovatebot/) and are based on [devcontainers](https://code.visualstudio.com/docs/remote/containers). All languages exist in folders (e.g. \`./java\`), and branches that are kept in sync through Github Actions.
 
 [Clone repository in IntelliJ](${wrapInRedirect(
     OPEN_IN_INTELLIJ
@@ -119,7 +119,7 @@ Any bootstrap project may be added to this repository, if:
 - One failing, and one succeeding test exists
 - Version numbers are either \`latest\` or [renovate](https://github.com/renovatebot/) can pick them up automatically (e.g. don't use variables in \`pom.xml\` or elsewhere).
 
-A bootstrap needs to contain a valid [\`.devcontainer.json\`](./java_junit5/.devcontainer/devcontainer.json) that configures a container with all appropriate tooling. Furthermore, the \`postCreateCommand\` needs to contain a shell command that, when executed, will verify that the test runner correctly runs and reports that two tests ran and one of them failed.
+A bootstrap needs to contain a valid [\`.devcontainer.json\`](./java/.devcontainer/devcontainer.json) that configures a container with all appropriate tooling. Furthermore, the \`postCreateCommand\` needs to contain a shell command that, when executed, will verify that the test runner correctly runs and reports that two tests ran and one of them failed.
 
 ## Other kata bootstraps
 

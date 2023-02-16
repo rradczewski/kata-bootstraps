@@ -9,5 +9,5 @@ BRANCHES=$(comm -13 <(ls -d */ | sed 's/.$//' | sort) <(git ls-remote --heads or
 
 set -e
 for i in $BRANCHES; do
-    git push origin ":refs/head/$i"
+    git push origin ":refs/heads/$i"
 done
