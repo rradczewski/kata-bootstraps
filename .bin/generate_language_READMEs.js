@@ -2,6 +2,7 @@ const path = require("path");
 const { URL } = require("url");
 const { runDevcontainerCliInFolder } = require("./_devcontainer");
 const { languages } = require("./_languages");
+const { resolveLanguageLogo } = require("./_language_logo");
 const { writeFile } = require("fs/promises");
 
 const DEVCONTAINER_SPEC_EXTENSION = "github.com/rradczewski/kata-bootstraps";
@@ -45,13 +46,21 @@ const render = async (directory) => {
   ]);
 
   const devcontainerSpec = JSON.parse(stdout);
-
+  const devcontainerJsonPath = path.dirname(
+    devcontainerSpec.configuration.configFilePath.path
+  );
   const actualDirectory = path.basename(
     devcontainerSpec.workspace.workspaceFolder
   );
 
   const kataCustomization =
     devcontainerSpec.configuration.customizations[DEVCONTAINER_SPEC_EXTENSION];
+
+  const logoUrl = resolveLanguageLogo(
+    kataCustomization.languageLogo,
+    directory,
+    devcontainerJsonPath
+  );
 
   const openAsCodespaceUrl = new URL(OPEN_IN_CODESPACE_URL);
   openAsCodespaceUrl.searchParams.append("ref", actualDirectory);
@@ -65,7 +74,7 @@ const render = async (directory) => {
     "https://github.com/rradczewski/kata-bootstraps/tree/" + actualDirectory;
 
   return `
-<img width="100px" src="${kataCustomization.languageLogo}" /></a>
+<img width="100px" src="${logoUrl}" /></a>
 # Kata-Bootstrap: ${devcontainerSpec.configuration.name}
 
 | [Open in GitHub Codespace](${openAsCodespaceUrl}) | [Open in GitPod.io](${openInGitpodIoUrl}) | [Open locally in VSCode](${wrappedOpenInVsCodeUrl}) |
