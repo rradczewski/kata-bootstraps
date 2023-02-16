@@ -80,3 +80,4 @@ jobs:
         run: npm install
       - run: |
           ./.bin/update_and_force_push_language_branches.sh
+          ./.bin/clean_old_branches.sh
