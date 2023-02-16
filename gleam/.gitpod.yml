@@ -1,0 +1,4 @@
+image: ghcr.io/gleam-lang/gleam:v0.26.2-erlang
+tasks:
+  - name: Init
+    init: gleam deps download
