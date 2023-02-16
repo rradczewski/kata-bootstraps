@@ -15,7 +15,7 @@
     "github.com/rradczewski/kata-bootstraps": {
       "failingTestVerification": "gleam test | tee /dev/stderr | grep -q '2 tests, 1 failures'",
       "testCommand": "gleam test",
-      "languageLogo": "/gleam/logo.svg",
+      "languageLogo": "./logo.svg",
       "resources": [
         {
           "name": "Gleam Documentation",
