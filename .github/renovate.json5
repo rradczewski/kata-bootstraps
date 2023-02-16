@@ -72,6 +72,18 @@
       "depNameTemplate": "eclipse-temurin",
       "datasourceTemplate": "docker",
       "versioningTemplate": "regex:(?<major>\\d+).*"
+    },
+    {
+      "fileMatch": [
+        "(^|/)gleam\\.toml$"
+      ],
+      "matchStringsStrategy": "recursive",
+      "matchStrings": [
+        "\\[(dependencies|dev-dependencies)\\]\\s*[^\\[]*",
+        "(?<depName>.+?) *= *\"(?<currentValue>.+?)\""
+      ],
+      "versioningTemplate": "hex",
+      "datasourceTemplate": "hex"
     }
   ]
 }
