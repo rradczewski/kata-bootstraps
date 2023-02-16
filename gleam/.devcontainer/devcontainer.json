@@ -1,0 +1,35 @@
+{
+  "name": "gleam",
+  "image": "ghcr.io/gleam-lang/gleam:v0.26.2-erlang",
+  "features": {
+    "ghcr.io/devcontainers/features/common-utils:1": {
+      "installZsh": false,
+      "installOhMyZsh": false,
+      "upgradePackages": false,
+      "username": "vscode"
+    }
+  },
+  "remoteUser": "vscode",
+  "onCreateCommand": "gleam deps download",
+  "customizations": {
+    "github.com/rradczewski/kata-bootstraps": {
+      "failingTestVerification": "gleam test | tee /dev/stderr | grep -q '2 tests, 1 failures'",
+      "testCommand": "gleam test",
+      "languageLogo": "/gleam/logo.svg",
+      "resources": [
+        {
+          "name": "Gleam Documentation",
+          "url": "https://gleam.run/documentation/"
+        },
+        {
+          "name": "Language Tour",
+          "url": "https://gleam.run/book/tour/"
+        },
+        {
+          "name": "Geeunit Reference",
+          "url": "https://hexdocs.pm/gleeunit/gleeunit/should.html"
+        }
+      ]
+    }
+  }
+}
