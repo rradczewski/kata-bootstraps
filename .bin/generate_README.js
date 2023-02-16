@@ -108,7 +108,7 @@ ${await renderLanguages()}
 
 ## Contributing a bootstrap
 
-The general paradigm of this repository is to create a self-contained, minimal starter projects that are least likely to (silently) break in the future and can automatically be kept up-to-date.
+The general paradigm of this repository is to create self-contained, minimal starter projects that are least likely to (silently) break in the future and can automatically be kept up-to-date.
 
 Any bootstrap project may be added to this repository, if:
 
