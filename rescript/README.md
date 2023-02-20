@@ -8,7 +8,7 @@
 ## Test Command
 
 ```sh
-$ npm test:watch
+$ npm run test:watch
 ```
 
 ## References
