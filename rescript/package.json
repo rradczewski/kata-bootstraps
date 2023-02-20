@@ -6,9 +6,9 @@
   "scripts": {
     "build": "rescript build",
     "test": "rescript build && jest",
-    "test:watch": "run-p test:watch:*",
-    "test:watch:compile": "while true; do rescript build -w || true; done",
-    "test:watch:test": "CI=1 jest --watch"
+    "test:watch": "npm-run-all -l build --parallel test:watch:*",
+    "test:watch:compile": "rescript build -w",
+    "test:watch:test": "CI=1 jest --watchAll"
   },
   "author": "",
   "license": "UNLICENSED",
