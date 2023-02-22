@@ -1,0 +1,32 @@
+{
+  "name": "Clojure",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "onCreateCommand": "lein deps",
+  "updateRemoteUserUID": true,
+  "containerUser": "java",
+  "remoteUser": "java",
+  "customizations": {
+    "github.com/rradczewski/kata-bootstraps": {
+      "failingTestVerification": "lein test | tee /dev/stderr |  grep -Pzq '(?s)Ran 1 tests containing 2 assertions.*1 failures, 0 errors'",
+      "testCommand": "lein test",
+      "languageLogo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/clojure/clojure-original.svg",
+      "resources": [
+        {
+          "name": "Clojure Guides",
+          "url": "https://clojure.org/guides/getting_started"
+        },
+        {
+          "name": "clojure.test Reference",
+          "url": "https://clojure.github.io/clojure/clojure.test-api.html"
+        }
+      ]
+    },
+    "vscode": {
+      "extensions": [
+        "betterthantomorrow.calva"
+      ]
+    }
+  }
+}
