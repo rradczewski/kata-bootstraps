@@ -1,6 +1,6 @@
 {
   "name": "gleam",
-  "image": "ghcr.io/gleam-lang/gleam:v0.27.0-erlang",
+  "image": "ghcr.io/gleam-lang/gleam:v0.28.0-erlang",
   "features": {
     "ghcr.io/devcontainers/features/common-utils:1": {
       "installZsh": false,
