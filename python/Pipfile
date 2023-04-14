@@ -4,7 +4,7 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-pytest = "==7.3.0"
+pytest = "==7.3.1"
 
 [dev-packages]
 
