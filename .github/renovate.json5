@@ -58,8 +58,8 @@
       "matchStrings": [
         "<maven\\.compiler\\.release>(?<currentValue>.*?)<\\/maven\\.compiler\\.release>"
       ],
-      "depNameTemplate": "eclipse-temurin",
-      "datasourceTemplate": "docker",
+      "depNameTemplate": "java-jdk",
+      "datasourceTemplate": "java-version",
       "versioningTemplate": "regex:(?<major>\\d+).*"
     },
     {
@@ -69,8 +69,8 @@
       "matchStrings": [
         "jvmToolchain\\((?<currentValue>.*?)\\)"
       ],
-      "depNameTemplate": "eclipse-temurin",
-      "datasourceTemplate": "docker",
+      "depNameTemplate": "java-jdk",
+      "datasourceTemplate": "java-version",
       "versioningTemplate": "regex:(?<major>\\d+).*"
     },
     {
