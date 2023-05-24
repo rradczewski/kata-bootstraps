@@ -1,1 +1,1 @@
-FROM docker.io/elixir:1.14.4
+FROM docker.io/elixir:1.14.5
