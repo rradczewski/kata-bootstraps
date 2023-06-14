@@ -9,6 +9,6 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "elm-test": "0.19.1-revision11"
+    "elm-test": "0.19.1-revision12"
   }
 }
