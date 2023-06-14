@@ -21,9 +21,7 @@
       ]
     },
     {
-      "matchFiles": [
-        "(^|/|\\.)elm\\.json$"
-      ],
+      "matchPaths": ["elm/**", "elm/*"],
       "groupName": "elm",
       "separateMajorMinor": false
     },
