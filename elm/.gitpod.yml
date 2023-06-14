@@ -3,3 +3,6 @@ image:
 tasks:
   - name: Init
     init: npm install
+vscode:
+  extensions:
+    - Elmtooling.elm-ls-vscode
