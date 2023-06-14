@@ -21,6 +21,13 @@
       ]
     },
     {
+      "matchFiles": [
+        "(^|/|\\.)elm\\.json$"
+      ],
+      "groupName": "elm",
+      "separateMajorMinor": false
+    },
+    {
       "matchDatasources": [
         "docker"
       ],
@@ -42,6 +49,37 @@
     }
   ],
   "regexManagers": [
+    {
+      "fileMatch": [
+        "(^|/|\\.)elm\\.json$"
+      ],
+      "matchStrings": [
+        "\"elm-version\"\\s*:\\s*\"(?<currentValue>.*)\""
+      ],
+      "depNameTemplate": "elm/compiler",
+      "datasourceTemplate": "github-tags",
+      "versioningTemplate": "semver"
+    },
+    {
+      "fileMatch": [
+        "(^|/|\\.)elm\\.json$"
+      ],
+      "matchStrings": [
+        "\"(?<depName>.*\/.*?)\"\\s*:\\s*\"(?<currentValue>.*)\""
+      ],
+      "datasourceTemplate": "github-tags",
+      "versioningTemplate": "semver"
+    },
+    {
+      "fileMatch": [
+        "(^|/|\\.)Dockerfile$",
+        "(^|/)Dockerfile[^/]*$"
+      ],
+      "matchStrings": [
+        "renovate: datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\s+ENV .*?_VERSION=(?<currentValue>.*)\\s"
+      ],
+      "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
+    },
     {
       "fileMatch": [
         "\\.?devcontainer.json$"
