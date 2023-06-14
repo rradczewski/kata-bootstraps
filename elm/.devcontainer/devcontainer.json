@@ -10,7 +10,11 @@
       "failingTestVerification": "CI=1 npm test 2>&1 | tee /dev/stderr | grep -zPq '(?s)Passed:.+1.+Failed:.+1'",
       "testCommand": "npm test",
       "languageLogo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/elm/elm-original.svg",
-      "resources": [
+      "resources": []
+    },
+    "vscode": {
+      "extensions": [
+        "Elmtooling.elm-ls-vscode"
       ]
     }
   }
