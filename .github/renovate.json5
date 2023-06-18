@@ -96,7 +96,7 @@
       ],
       "depNameTemplate": "java-jdk",
       "datasourceTemplate": "java-version",
-      "versioningTemplate": "regex:(?<major>\\d+).*"
+      "versioningTemplate": "regex:^(?<major>\\d+)$"
     },
     {
       "fileMatch": [
@@ -107,7 +107,7 @@
       ],
       "depNameTemplate": "java-jdk",
       "datasourceTemplate": "java-version",
-      "versioningTemplate": "regex:(?<major>\\d+).*"
+      "versioningTemplate": "regex:^(?<major>\\d+)$"
     },
     {
       "fileMatch": [
