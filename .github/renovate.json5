@@ -11,6 +11,7 @@
   "automerge": true,
   "automergeType": "branch",
   "commitMessagePrefix": "[{{packageFileDir}}] {{semanticPrefix}}",
+  "separateMajorMinor": false,
   "packageRules": [
     {
       "matchDatasources": [
@@ -21,29 +22,46 @@
       ]
     },
     {
-      "matchPaths": ["elm/**", "elm/*"],
+      "matchPaths": [
+        "elm/**",
+        "elm/*"
+      ],
       "groupName": "elm",
       "separateMajorMinor": false
     },
     {
-      "matchDatasources": [
-        "docker"
-      ],
       "matchPackageNames": [
         "docker.io/eclipse-temurin",
         "eclipse-temurin"
       ],
+      "groupName": "java",
       "versioning": "regex:^(?<major>\\d+)(\\.(?<minor>\\d+))?(\\.(?<patch>\\d+))?(_(?<build>\\d+))?(-(?<compatibility>.*))?$"
     },
     {
-      "matchDatasources": [
-        "docker"
-      ],
       "matchPackageNames": [
         "docker.io/maven",
         "maven"
       ],
+      "groupName": "java",
       "versioning": "regex:^(?<minor>\\d+)(\\.(?<patch>\\d+))?(\\.(?<build>\\d+))?-eclipse-temurin-(?<major>\\d+)-focal"
+    },
+    {
+      "matchPackageNames": [
+        "docker.io/maven",
+        "maven",
+        "docker.io/eclipse-temurin",
+        "eclipse-temurin",
+        "java-jdk"
+      ],
+      "groupName": "java"
+    },
+    {
+      "matchFiles": [
+        "(^|/|\\.)pom\\.xml$",
+        "(^|/|\\.)build\\.gradle$"
+      ],
+      "matchPackageNames": "java-jdk",
+      "rangeStrategy": "replace"
     }
   ],
   "regexManagers": [
@@ -96,7 +114,7 @@
       ],
       "depNameTemplate": "java-jdk",
       "datasourceTemplate": "java-version",
-      "versioningTemplate": "regex:^(?<major>\\d+)$"
+      "versioningTemplate": "regex:^(?<major>\\d+).*"
     },
     {
       "fileMatch": [
@@ -107,7 +125,7 @@
       ],
       "depNameTemplate": "java-jdk",
       "datasourceTemplate": "java-version",
-      "versioningTemplate": "regex:^(?<major>\\d+)$"
+      "versioningTemplate": "regex:^(?<major>\\d+).*"
     },
     {
       "fileMatch": [
