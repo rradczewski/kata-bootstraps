@@ -34,7 +34,6 @@
         "docker.io/eclipse-temurin",
         "eclipse-temurin"
       ],
-      "groupName": "java",
       "versioning": "regex:^(?<major>\\d+)(\\.(?<minor>\\d+))?(\\.(?<patch>\\d+))?(_(?<build>\\d+))?(-(?<compatibility>.*))?$"
     },
     {
@@ -42,8 +41,7 @@
         "docker.io/maven",
         "maven"
       ],
-      "groupName": "java",
-      "versioning": "regex:^(?<minor>\\d+)(\\.(?<patch>\\d+))?(\\.(?<build>\\d+))?-eclipse-temurin-(?<major>\\d+)-focal"
+      "versioning": "regex:^(?<minor>\\d+)(\\.(?<patch>\\d+))?(\\.(?<build>\\d+))?-eclipse-temurin-(?<major>\\d+)"
     }
   ],
   "regexManagers": [
