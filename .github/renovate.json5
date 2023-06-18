@@ -11,6 +11,7 @@
   "automerge": true,
   "automergeType": "branch",
   "commitMessagePrefix": "[{{packageFileDir}}] {{semanticPrefix}}",
+  "separateMajorMinor": false,
   "packageRules": [
     {
       "matchDatasources": [
@@ -21,28 +22,27 @@
       ]
     },
     {
-      "matchPaths": ["elm/**", "elm/*"],
+      "matchPaths": [
+        "elm/**",
+        "elm/*"
+      ],
       "groupName": "elm",
       "separateMajorMinor": false
     },
     {
-      "matchDatasources": [
-        "docker"
-      ],
       "matchPackageNames": [
         "docker.io/eclipse-temurin",
         "eclipse-temurin"
       ],
+      "groupName": "java",
       "versioning": "regex:^(?<major>\\d+)(\\.(?<minor>\\d+))?(\\.(?<patch>\\d+))?(_(?<build>\\d+))?(-(?<compatibility>.*))?$"
     },
     {
-      "matchDatasources": [
-        "docker"
-      ],
       "matchPackageNames": [
         "docker.io/maven",
         "maven"
       ],
+      "groupName": "java",
       "versioning": "regex:^(?<minor>\\d+)(\\.(?<patch>\\d+))?(\\.(?<build>\\d+))?-eclipse-temurin-(?<major>\\d+)-focal"
     }
   ],
@@ -86,28 +86,6 @@
         "\"image\" *: *\"(?<depName>.+?):(?<currentValue>.+?)\",?"
       ],
       "datasourceTemplate": "docker"
-    },
-    {
-      "fileMatch": [
-        "(^|/|\\.)pom\\.xml$"
-      ],
-      "matchStrings": [
-        "<maven\\.compiler\\.release>(?<currentValue>.*?)<\\/maven\\.compiler\\.release>"
-      ],
-      "depNameTemplate": "java-jdk",
-      "datasourceTemplate": "java-version",
-      "versioningTemplate": "regex:(?<major>\\d+).*"
-    },
-    {
-      "fileMatch": [
-        "(^|/|\\.)build\\.gradle$"
-      ],
-      "matchStrings": [
-        "jvmToolchain\\((?<currentValue>.*?)\\)"
-      ],
-      "depNameTemplate": "java-jdk",
-      "datasourceTemplate": "java-version",
-      "versioningTemplate": "regex:(?<major>\\d+).*"
     },
     {
       "fileMatch": [
