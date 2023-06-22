@@ -9,3 +9,4 @@ vscode:
     - rust-lang.rust-analyzer
     - tamasfe.even-better-toml
     - serayuzgur.crates
+    - MS-vsliveshare.vsliveshare

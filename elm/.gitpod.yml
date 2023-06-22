@@ -6,3 +6,4 @@ tasks:
 vscode:
   extensions:
     - Elmtooling.elm-ls-vscode
+    - MS-vsliveshare.vsliveshare

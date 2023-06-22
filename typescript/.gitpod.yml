@@ -2,3 +2,6 @@ image: mcr.microsoft.com/devcontainers/javascript-node:20-bullseye
 tasks:
   - name: Init
     init: npm install
+vscode:
+  extensions:
+    - MS-vsliveshare.vsliveshare

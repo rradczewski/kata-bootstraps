@@ -3,3 +3,6 @@ image:
 tasks:
   - name: Init
     init: mix deps.get && mix compile
+vscode:
+  extensions:
+    - MS-vsliveshare.vsliveshare

@@ -6,3 +6,4 @@ vscode:
   extensions:
     - ms-python.python
     - ms-python.vscode-pylance
+    - MS-vsliveshare.vsliveshare

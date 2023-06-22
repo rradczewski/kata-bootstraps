@@ -6,3 +6,4 @@ tasks:
 vscode:
   extensions:
     - betterthantomorrow.calva
+    - MS-vsliveshare.vsliveshare

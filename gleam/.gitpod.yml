@@ -2,3 +2,6 @@ image: ghcr.io/gleam-lang/gleam:v0.29.0-erlang
 tasks:
   - name: Init
     init: rm manifest.toml || true; gleam deps download
+vscode:
+  extensions:
+    - MS-vsliveshare.vsliveshare

@@ -5,3 +5,4 @@ tasks:
 vscode:
   extensions:
     - chenglou92.rescript-vscode
+    - MS-vsliveshare.vsliveshare

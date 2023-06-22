@@ -6,3 +6,4 @@ tasks:
 vscode:
   extensions:
     - vscjava.vscode-java-pack
+    - MS-vsliveshare.vsliveshare

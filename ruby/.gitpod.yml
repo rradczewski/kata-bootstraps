@@ -3,4 +3,5 @@ tasks:
   - name: Init
     init: bundle install
 vscode:
-  extensions: []
+  extensions:
+    - MS-vsliveshare.vsliveshare
