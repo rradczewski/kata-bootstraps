@@ -26,6 +26,7 @@
     "vscode": {
       "extensions": [
         "vscjava.vscode-java-pack",
+        "fwcd.kotlin",
         "MS-vsliveshare.vsliveshare"
       ]
     }
