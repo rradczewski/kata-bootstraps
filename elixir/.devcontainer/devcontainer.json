@@ -28,6 +28,11 @@
           "url": "https://hexdocs.pm/ex_unit/ExUnit.html"
         }
       ]
+    },
+    "vscode": {
+      "extensions": [
+        "MS-vsliveshare.vsliveshare"
+      ]
     }
   }
 }

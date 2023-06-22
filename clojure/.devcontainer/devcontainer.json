@@ -25,7 +25,8 @@
     },
     "vscode": {
       "extensions": [
-        "betterthantomorrow.calva"
+        "betterthantomorrow.calva",
+        "MS-vsliveshare.vsliveshare"
       ]
     }
   }

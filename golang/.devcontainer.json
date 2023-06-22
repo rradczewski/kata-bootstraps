@@ -30,7 +30,8 @@
         "go.gopath": "/go"
       },
       "extensions": [
-        "golang.Go"
+        "golang.Go",
+        "MS-vsliveshare.vsliveshare"
       ]
     }
   }

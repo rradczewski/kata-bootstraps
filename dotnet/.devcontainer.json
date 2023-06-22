@@ -25,7 +25,8 @@
     },
     "vscode": {
       "extensions": [
-        "ms-dotnettools.csharp"
+        "ms-dotnettools.csharp",
+        "MS-vsliveshare.vsliveshare"
       ]
     }
   }

@@ -30,6 +30,11 @@
           "url": "https://hexdocs.pm/gleeunit/gleeunit/should.html"
         }
       ]
+    },
+    "vscode": {
+      "extensions": [
+        "MS-vsliveshare.vsliveshare"
+      ]
     }
   }
 }

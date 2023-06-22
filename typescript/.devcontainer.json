@@ -22,6 +22,11 @@
           "url": "https://jestjs.io/docs/getting-started"
         }
       ]
+    },
+    "vscode": {
+      "extensions": [
+        "MS-vsliveshare.vsliveshare"
+      ]
     }
   }
 }
