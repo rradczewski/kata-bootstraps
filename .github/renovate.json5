@@ -43,6 +43,19 @@
         "maven"
       ],
       "versioning": "regex:^(?<minor>\\d+)(\\.(?<patch>\\d+))?(\\.(?<build>\\d+))?-eclipse-temurin-(?<major>\\d+)"
+    },
+    {
+      "matchFiles": [
+        "(^|/|\\.)pom\\.xml$",
+        "(^|/|\\.)build\\.gradle$"
+      ],
+      "matchDepNames": [
+        "eclipse-temurin"
+      ],
+      "matchDatasources": [
+        "docker"
+      ],
+      "allowedVersions": "/^[0-9]+$/"
     }
   ],
   "regexManagers": [
@@ -97,6 +110,22 @@
       ],
       "versioningTemplate": "hex",
       "datasourceTemplate": "hex"
+    },
+    {
+      "fileMatch": [
+        "(^|/|\\.)pom\\.xml$",
+        "(^|/|\\.)build\\.gradle$"
+      ],
+      "matchStrings": [
+        "<java\\.version>(?<currentValue>.*?)<\\/java\\.version>",
+        "<maven\\.compiler\\.source>(?<currentValue>.*?)<\\/maven\\.compiler\\.source>",
+        "<maven\\.compiler\\.target>(?<currentValue>.*?)<\\/maven\\.compiler\\.target>",
+        "<maven\\.compiler\\.release>(?<currentValue>.*?)<\\/maven\\.compiler\\.release>",
+        "jvmToolchain\\((?<currentValue>.*?)\\)"
+      ],
+      "depNameTemplate": "eclipse-temurin",
+      "datasourceTemplate": "docker",
+      "versioningTemplate": "regex:(?<major>\\d+).*"
     }
   ]
 }
