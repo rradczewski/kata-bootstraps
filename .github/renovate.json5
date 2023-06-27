@@ -42,7 +42,7 @@
         "docker.io/maven",
         "maven"
       ],
-      "versioning": "regex:^(?<minor>\\d+)(\\.(?<patch>\\d+))?(\\.(?<build>\\d+))?-eclipse-temurin-(?<major>\\d+)"
+      "versioning": "regex:^(?<minor>\\d+)(\\.(?<patch>\\d+))?(\\.(?<build>\\d+))?-eclipse-temurin-(?<major>\\d+)?(-(?<compatibility>.*))?$"
     },
     {
       "matchFiles": [
