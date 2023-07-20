@@ -1,0 +1,24 @@
+{
+  "name": "PureScript",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:20-bullseye",
+  "remoteUser": "node",
+  "onCreateCommand": "npm install",
+  "remoteEnv": {
+    "PATH": "${containerEnv:PATH}:${containerWorkspaceFolder}/node_modules/.bin/"
+  },
+  "customizations": {
+    "github.com/rradczewski/kata-bootstraps": {
+      "failingTestVerification": "CI=1 spago test 2>&1 | tee /dev/stderr | grep -q '1/2 tests passed'",
+      "testCommand": "spago test",
+      "languageLogo": "https://raw.githubusercontent.com/purescript/purescript/master/logo.png",
+      "resources": []
+    },
+    "vscode": {
+      "extensions": [
+		"MS-vsliveshare.vsliveshare",
+		"nwolverson.ide-purescript",
+		"dhall.dhall-lang"
+	]
+    }
+  }
+}
