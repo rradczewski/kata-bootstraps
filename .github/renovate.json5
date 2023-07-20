@@ -31,6 +31,14 @@
       "separateMajorMinor": false
     },
     {
+      "matchPaths": [
+        "purescript/**",
+        "purescript/*"
+      ],
+      "groupName": "purescript",
+      "separateMajorMinor": false
+    },
+    {
       "matchPackageNames": [
         "docker.io/eclipse-temurin",
         "eclipse-temurin"
@@ -98,7 +106,8 @@
         "-- renovate: datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\s+let upstream =.*?(?<currentValue>psc-.*)\/packages.dhall\\s"
       ],
       "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
-    },    {
+    },
+    {
       "fileMatch": [
         "\\.?devcontainer.json$"
       ],
