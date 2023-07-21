@@ -1,0 +1,40 @@
+{
+  "name": "Scala",
+  "image": "docker.io/sbtscala/scala-sbt:eclipse-temurin-jammy-19.0.1_10_1.9.2_3.3.0",
+  "onCreateCommand": "",
+  "updateRemoteUserUID": true,
+  "containerUser": "sbtuser",
+  "remoteUser": "sbtuser",
+  "customizations": {
+    "github.com/rradczewski/kata-bootstraps": {
+      "failingTestVerification": "sbt test | tee /dev/stderr | grep -q 'Failed: Total 2, Failed 1, Errors 0, Passed 1'",
+      "testCommand": "sbt test",
+      "languageLogo": "./scala-original.svg",
+      "resources": [
+        {
+          "name": "Scala Documentation",
+          "url": "https://docs.scala-lang.org/"
+        },
+        {
+          "name": "Scala3 Language Reference",
+          "url": "https://docs.scala-lang.org/scala3/reference/"
+        },
+        {
+          "name": "Scala Cheatsheet",
+          "url": "https://docs.scala-lang.org/cheatsheets/index.html"
+        },
+        {
+          "name": "MUnit Reference",
+          "url": "https://scalameta.org/munit/docs/getting-started.html"
+        }
+      ]
+    },
+    "vscode": {
+      "extensions": [
+        "MS-vsliveshare.vsliveshare",
+        "scalameta.metals",
+        "scala-lang.scala"
+      ]
+    }
+  }
+}
