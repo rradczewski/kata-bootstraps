@@ -7,7 +7,7 @@
     "github.com/rradczewski/kata-bootstraps": {
       "failingTestVerification": "ginkgo | tee /dev/stderr | grep -zPq '(?s)FAIL: TestFails.*PASS: TestSucceeds'",
       "testCommand": "ginkgo",
-      "languageLogo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original-wordmark.svg",
+      "languageLogo": "./go-original-wordmark.svg",
       "resources": [
         {
           "name": "Go Reference",

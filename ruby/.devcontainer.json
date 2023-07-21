@@ -7,7 +7,7 @@
     "github.com/rradczewski/kata-bootstraps": {
       "failingTestVerification": "bundle exec rspec | tee /dev/stderr | grep -q '2 examples, 1 failure'",
       "testCommand": "bundle exec rspec",
-      "languageLogo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ruby/ruby-original.svg",
+      "languageLogo": "./ruby-original.svg",
       "resources": [
         {
           "name": "Ruby Reference",

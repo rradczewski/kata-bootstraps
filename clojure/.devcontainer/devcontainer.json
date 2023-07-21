@@ -11,7 +11,7 @@
     "github.com/rradczewski/kata-bootstraps": {
       "failingTestVerification": "lein test | tee /dev/stderr |  grep -Pzq '(?s)Ran 1 tests containing 2 assertions.*1 failures, 0 errors'",
       "testCommand": "lein test",
-      "languageLogo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/clojure/clojure-original.svg",
+      "languageLogo": "../clojure-original.svg",
       "resources": [
         {
           "name": "Clojure Guides",

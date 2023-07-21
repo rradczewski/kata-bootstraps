@@ -11,7 +11,7 @@
     "github.com/rradczewski/kata-bootstraps": {
       "failingTestVerification": "./gradlew test 2>&1 | tee /dev/stderr | grep -q '2 tests completed, 1 failed'",
       "testCommand": "./gradlew test",
-      "languageLogo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg",
+      "languageLogo": "../kotlin-original.svg",
       "resources": [
         {
           "name": "Kotlin Reference",

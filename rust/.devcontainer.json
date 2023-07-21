@@ -7,7 +7,7 @@
     "github.com/rradczewski/kata-bootstraps": {
       "failingTestVerification": "cargo test | tee /dev/stderr | grep -q 'test result: FAILED. 1 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out;'",
       "testCommand": "cargo test",
-      "languageLogo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rust/rust-plain.svg",
+      "languageLogo": "./rust-plain.svg",
       "resources": [
         {
           "name": "Rust Reference",

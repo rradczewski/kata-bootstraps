@@ -7,7 +7,7 @@
     "github.com/rradczewski/kata-bootstraps": {
       "failingTestVerification": "pipenv run pytest | tee /dev/stderr | grep -q '1 failed, 1 passed in'",
       "testCommand": "pipenv run pytest",
-      "languageLogo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+      "languageLogo": "./python-original.svg",
       "resources": [
         {
           "name": "Python Reference",

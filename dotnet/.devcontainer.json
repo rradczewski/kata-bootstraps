@@ -7,7 +7,7 @@
     "github.com/rradczewski/kata-bootstraps": {
       "failingTestVerification": "dotnet test | tee /dev/stderr | grep -q 'Failed!  - Failed:     1, Passed:     1, Skipped:     0, Total:     2'",
       "testCommand": "dotnet test",
-      "languageLogo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg",
+      "languageLogo": "./dotnetcore-original.svg",
       "resources": [
         {
           "name": "C# Reference",

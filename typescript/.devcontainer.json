@@ -7,7 +7,7 @@
     "github.com/rradczewski/kata-bootstraps": {
       "failingTestVerification": "CI=1 npm test 2>&1 | tee /dev/stderr | grep -q 'Tests:       1 failed, 1 passed, 2 total'",
       "testCommand": "npm test",
-      "languageLogo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
+      "languageLogo": "./typescript-original.svg",
       "resources": [
         {
           "name": "TypeScript Reference",

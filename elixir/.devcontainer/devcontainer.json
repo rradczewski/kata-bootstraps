@@ -17,7 +17,7 @@
     "github.com/rradczewski/kata-bootstraps": {
       "failingTestVerification": "mix test | tee /dev/stderr | grep -q '2 tests, 1 failure'",
       "testCommand": "mix test",
-      "languageLogo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/elixir/elixir-original.svg",
+      "languageLogo": "../elixir-original.svg",
       "resources": [
         {
           "name": "elixir Reference",

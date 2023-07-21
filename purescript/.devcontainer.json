@@ -10,15 +10,24 @@
     "github.com/rradczewski/kata-bootstraps": {
       "failingTestVerification": "CI=1 spago test 2>&1 | tee /dev/stderr | grep -q '1/2 tests passed'",
       "testCommand": "spago test",
-      "languageLogo": "https://raw.githubusercontent.com/purescript/purescript/master/logo.png",
-      "resources": []
+      "languageLogo": "./logo.svg",
+      "resources": [
+        {
+          "name": "Book",
+          "url": "https://book.purescript.org/"
+        },
+        {
+          "name": "Getting Started",
+          "url": "https://github.com/purescript/documentation/blob/master/guides/Getting-Started.md"
+        }
+      ]
     },
     "vscode": {
       "extensions": [
-		"MS-vsliveshare.vsliveshare",
-		"nwolverson.ide-purescript",
-		"dhall.dhall-lang"
-	]
+        "MS-vsliveshare.vsliveshare",
+        "nwolverson.ide-purescript",
+        "dhall.dhall-lang"
+      ]
     }
   }
 }
