@@ -1,0 +1,27 @@
+{
+  "name": "Haskell",
+  "image": "haskell:9.2.8",
+  "features": {
+    "ghcr.io/devcontainers/features/common-utils:1": {
+      "installZsh": false,
+      "installOhMyZsh": false,
+      "upgradePackages": false,
+      "username": "vscode"
+    }
+  },
+  "remoteUser": "vscode",
+  "onCreateCommand": "stack config set install-ghc false && stack config set system-ghc true && stack build --only-dependencies --test",
+  "customizations": {
+    "github.com/rradczewski/kata-bootstraps": {
+      "failingTestVerification": "stack test | tee /dev/stderr | grep -q '2 examples, 1 failure'",
+      "testCommand": "stack test",
+      "languageLogo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/haskell/haskell-original.svg",
+      "resources": []
+    },
+    "vscode": {
+      "extensions": [
+        "MS-vsliveshare.vsliveshare"
+      ]
+    }
+  }
+}
