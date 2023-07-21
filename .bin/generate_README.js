@@ -83,27 +83,33 @@ const renderLanguage = async (directory) => {
     "https://github.com/rradczewski/kata-bootstraps/tree/" + actualDirectory;
 
   return (
-    `| <a alt="${devcontainerSpec.configuration.name}" href="./${actualDirectory}"><img width="100px" src="${logoUrl}" /></a> ` +
-    `| [${devcontainerSpec.configuration.name}](./${actualDirectory}) ` +
+    `| <p align="center"><a alt="${devcontainerSpec.configuration.name}" href="./${actualDirectory}"><img width="100px" src="${logoUrl}" /><br/>${devcontainerSpec.configuration.name}</a></p> ` +
     `| ${kataCustomization.resources
       .map((res) => `[${res.name}](${res.url})`)
       .join("<br/>")} ` +
     `| \`${kataCustomization.testCommand}\` ` +
-    `| [Open in GitHub Codespace](${openAsCodespaceUrl})<br/>[Open in GitPod.io](${openInGitpodIoUrl})<br/>[Open locally in VSCode](${wrappedOpenInVsCodeUrl})`
+    `| <p><a href="${openAsCodespaceUrl}">☁️ Open in GitHub Codespace</a></p>` +
+    `  <p><a href="${openInGitpodIoUrl}">☁️ Open in GitPod</a></p>` +
+    `  <p><a href="${wrappedOpenInVsCodeUrl}">💻 Open in VSCode</a></p>`
   );
 };
 
 const layout = async (l) =>
-  `# Curated Kata Bootstrap Projects
+  `# Ready-to-go kata bootstrap projects
 
-This repository contains curated starter projects for running katas. All projects are kept up-to-date automatically by [renovate](https://github.com/renovatebot/) and are based on [devcontainers](https://code.visualstudio.com/docs/remote/containers). All languages exist in folders (e.g. \`./java\`), and branches that are kept in sync through Github Actions.
+This repository contains starter projects for running katas in a variety of languages. All projects are using the latest language and framework versions (thanks to [renovate](https://github.com/renovatebot/)) and run on any device straight out of the box using Visual Studio Code and [devcontainers](https://code.visualstudio.com/docs/remote/containers). 
 
-[Clone repository in IntelliJ](${wrapInRedirect(
+
+<b>In the cloud:</b> Select the language from below and click "Open in GitHub Codespace" or "Open in GitPod"
+
+<b>In VisualStudio Code:</b> Select the language from below and click "Open in VisualStudio Code"
+
+<b>In IntelliJ:</b> [Click here to clone this repository in IntelliJ](${wrapInRedirect(
     OPEN_IN_INTELLIJ
   )}) (requires [Jetbrains Toolbox](https://www.jetbrains.com/lp/toolbox/)) and select your language either by opening one of the subfolders as a project or by switching the branch.
 
-|   | Language  | Resources | Test Command | Quick Start |
-|---|---|---|---|---|
+| Language  | Resources | Test Command | Quick Start |
+|---|---|---|---|
 ${await renderLanguages()}
 
 ## Contributing a bootstrap
@@ -112,14 +118,14 @@ The general paradigm of this repository is to create self-contained, minimal sta
 
 Any bootstrap project may be added to this repository, if:
 
-- The language is not yet present **or** the test-framework enables a different paradigm than the bootstraps already present for the language (e.g. a cucumber or mutation testing tool, not junit4)
+- The language is not yet present **or** the test-framework enables a different paradigm than the bootstraps already present for the language (e.g. a cucumber or mutation testing tool, not just junit4 or testng)
 - Dependencies and docker images are well-known and commonly used
-    - Avoids using custom Dockerfile-based dev-containers
+    - Avoids using custom Dockerfile-based dev-containers (they will have to be built each time a devcontainer starts)
     - Uses only one testing framework and one assertion library
 - One failing, and one succeeding test exists
-- Version numbers are either \`latest\` or [renovate](https://github.com/renovatebot/) can pick them up automatically (e.g. don't use variables in \`pom.xml\` or elsewhere).
+- Version numbers are fixed (so they can be picked up and updated by renovate)
 
-A bootstrap needs to contain a valid [\`.devcontainer.json\`](./java/.devcontainer/devcontainer.json) that configures a container with all appropriate tooling. Furthermore, the \`postCreateCommand\` needs to contain a shell command that, when executed, will verify that the test runner correctly runs and reports that two tests ran and one of them failed.
+A bootstrap needs to contain a valid [\`.devcontainer.json\`](./java/.devcontainer/devcontainer.json) that configures a container with all appropriate tooling. See any of the existing bootstrap projects for reference.
 
 ## Other kata bootstraps
 
