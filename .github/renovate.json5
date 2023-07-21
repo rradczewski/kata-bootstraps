@@ -72,45 +72,54 @@
         "docker"
       ],
       "allowedVersions": "/^[0-9]+$/"
+    },
+    {
+      "matchDepNames": [
+        "haskell"
+      ],
+      "matchDatasources": [
+        "docker"
+      ],
+      "enabled": false
     }
   ],
   "customDatasources": {
     "haskell-ghc": {
       "defaultRegistryUrlTemplate": "https://www.stackage.org/snapshots",
       "transformTemplates": [
-        "{ \n    \"releases\": $reduce($.snapshots, $append) @ $release.[{\n        \"stack\": $release[0],\n        \"lts\": $exists($match($release[0], /^lts/)),\n        \"ghc\": $match($release[1], /.+(ghc-.+))/).groups[0]\n    }]\n}",
-        "releases[lts=true].{ \"version\": $substring(ghc, 4) }"
+        "{ \n    \"releases\": $reduce($.snapshots, $append) @ $release.[{\n        \"stack\": $release[0],\n        \"lts\": $exists($match($release[0], /^lts/)),\n        \"ghc\": $match($release[1], /.+(ghc-.+)\\)/).groups[0]\n    }]\n}",
+        "{ \"releases\": releases[lts=true].{ \"version\": $substring(ghc, 4) } }"
       ]
     },
     "haskell-stack": {
       "defaultRegistryUrlTemplate": "https://www.stackage.org/snapshots",
       "transformTemplates": [
-        "{ \n    \"releases\": $reduce($.snapshots, $append) @ $release.[{\n        \"stack\": $release[0],\n        \"lts\": $exists($match($release[0], /^lts/)),\n        \"ghc\": $match($release[1], /.+(ghc-.+))/).groups[0]\n    }]\n}",
-        "releases[lts=true].{ \"version\": stack }"
+        "{ \n    \"releases\": $reduce($.snapshots, $append) @ $release.[{\n        \"stack\": $release[0],\n        \"lts\": $exists($match($release[0], /^lts/)),\n        \"ghc\": $match($release[1], /.+(ghc-.+)\\)/).groups[0]\n    }]\n}",
+        "{ \"releases\": releases[lts=true].{ \"version\": stack } }"
       ]
     }
   },
   "regexManagers": [
     {
       "fileMatch": [
-        "haskell/\\.devcontainer.json$"
+        "\\.?devcontainer.json$"
       ],
-      "depNameTemplate": "haskell",
+      "depNameTemplate": "haskell-ghc",
       "matchStrings": [
         "\"image\" *: *\"haskell:(?<currentValue>.+?)\",?"
       ],
-      "datasourceTemplate": "haskell-ghc",
+      "datasourceTemplate": "custom.haskell-ghc",
       "versioningTemplate": "semver"
     },
     {
       "fileMatch": [
-        "haskell/stack\\.yaml$"
+        "(^|/|\\.)stack\\.yaml$"
       ],
-      "depNameTemplate": "haskell",
+      "depNameTemplate": "haskell-stack",
       "matchStrings": [
-        "resolver: (?<currentValue>.+?)"
+        "\\nresolver: (?<currentValue>lts-.+?)\\s"
       ],
-      "datasourceTemplate": "haskell-stack",
+      "datasourceTemplate": "custom.haskell-stack",
       "versioningTemplate": "regex:lts-(?<major>\\d+)\\.(?<minor>\\d+)"
     },
     {
