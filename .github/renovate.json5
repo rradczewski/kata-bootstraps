@@ -93,6 +93,26 @@
       ],
       "additionalBranchPrefix": "scala-",
       "groupName": "jdk-scala-sbt-update"
+    },
+    {
+      "matchFileNames": [
+        "kotlin/**"
+      ],
+      "matchPackageNames": [
+        "eclipse-temurin"
+      ],
+      "additionalBranchPrefix": "kotlin-",
+      "groupName": "jdk-update"
+    },
+    {
+      "matchFileNames": [
+        "java/**"
+      ],
+      "matchPackageNames": [
+        "eclipse-temurin"
+      ],
+      "additionalBranchPrefix": "java-",
+      "groupName": "jdk-update"
     }
   ],
   "customDatasources": {
