@@ -1,4 +1,4 @@
-FROM docker.io/eclipse-temurin:20.0.1_9-jdk-jammy
+FROM docker.io/eclipse-temurin:20.0.2_9-jdk-jammy
 
 RUN useradd -rm -d /home/java -s /bin/bash -u 1001 java
 USER java
