@@ -91,6 +91,7 @@
       "matchDepPatterns": [
         "^scala-docker-image.+"
       ],
+      "separateMajorMinor": true,
       "additionalBranchPrefix": "scala-",
       "groupName": "jdk-scala-sbt-update"
     },
