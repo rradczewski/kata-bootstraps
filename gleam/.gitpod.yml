@@ -1,4 +1,4 @@
-image: ghcr.io/gleam-lang/gleam:v0.30.4-erlang
+image: ghcr.io/gleam-lang/gleam:v0.30.5-erlang
 tasks:
   - name: Init
     init: rm manifest.toml || true; gleam deps download
