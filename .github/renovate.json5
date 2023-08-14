@@ -86,7 +86,8 @@
       "matchDepNames": [
         "sbt/sbt",
         "scala",
-        "org.scala-lang:scala3-library_3"
+        "org.scala-lang:scala3-library_3",
+        "scala-docker-image-java-version"
       ],
       "matchDepPatterns": [
         "^scala-docker-image.+"
