@@ -1,6 +1,6 @@
 {
   "name": "Haskell",
-  "image": "haskell:9.4.5",
+  "image": "haskell:9.4.6",
   "features": {
     "ghcr.io/devcontainers/features/common-utils:1": {
       "installZsh": false,
