@@ -1,7 +1,6 @@
 {
   "name": "PHP",
   "image": "mcr.microsoft.com/devcontainers/php:8.2",
-  "remoteUser": "vscode",
   "onCreateCommand": "composer install",
   "customizations": {
     "github.com/rradczewski/kata-bootstraps": {
