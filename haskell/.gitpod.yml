@@ -1,8 +1,9 @@
 image: haskell:9.4.6
 tasks:
   - name: Init
-    init: stack config set install-ghc false && stack config set system-ghc true &&
-      stack build --allow-different-user --only-dependencies --test
+    init: stack --allow-different-user config set install-ghc false && stack
+      --allow-different-user config set system-ghc true && stack
+      --allow-different-user build --only-dependencies --test
 vscode:
   extensions:
     - MS-vsliveshare.vsliveshare
