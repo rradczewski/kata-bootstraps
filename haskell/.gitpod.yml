@@ -1,4 +1,4 @@
-image: haskell:9.4.5
+image: haskell:9.4.6
 tasks:
   - name: Init
     init: stack config set install-ghc false && stack config set system-ghc true &&
