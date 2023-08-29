@@ -9,7 +9,7 @@
       "username": "vscode"
     }
   },
-  "remoteUser": "vscode",
+  "remoteUser": "root",
   "onCreateCommand": "rm manifest.toml || true; gleam deps download",
   "customizations": {
     "github.com/rradczewski/kata-bootstraps": {

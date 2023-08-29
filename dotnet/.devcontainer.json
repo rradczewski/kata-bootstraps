@@ -1,7 +1,7 @@
 {
   "name": "Dotnet",
   "image": "mcr.microsoft.com/devcontainers/dotnet:7.0",
-  "remoteUser": "vscode",
+  "remoteUser": "root",
   "onCreateCommand": "dotnet build",
   "customizations": {
     "github.com/rradczewski/kata-bootstraps": {

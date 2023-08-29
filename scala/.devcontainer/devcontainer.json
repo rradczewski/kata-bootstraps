@@ -5,8 +5,8 @@
   },
   "onCreateCommand": "sbt update",
   "updateRemoteUserUID": true,
-  "containerUser": "sbtuser",
-  "remoteUser": "sbtuser",
+  "containerUser": "root",
+  "remoteUser": "root",
   "customizations": {
     "github.com/rradczewski/kata-bootstraps": {
       "failingTestVerification": "sbt test | tee /dev/stderr | grep -q 'Failed: Total 2, Failed 1, Errors 0, Passed 1'",

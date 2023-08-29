@@ -11,7 +11,7 @@
       "username": "vscode"
     }
   },
-  "remoteUser": "vscode",
+  "remoteUser": "root",
   "onCreateCommand": "mix deps.get && mix compile",
   "customizations": {
     "github.com/rradczewski/kata-bootstraps": {

@@ -3,7 +3,7 @@
   "build": {
     "dockerfile": "Dockerfile"
   },
-  "remoteUser": "node",
+  "remoteUser": "root",
   "onCreateCommand": "npm install",
   "customizations": {
     "github.com/rradczewski/kata-bootstraps": {
