@@ -24,7 +24,7 @@ jobs:
         run: |
           set -x
           BOOTSTRAPS=$(ls -d */ | sed 's/.$//' | jq -Rsc '. / "\n" - [""]')
-          echo ::set-output name=bootstraps::${BOOTSTRAPS}
+          echo "bootstraps=${BOOTSTRAPS}" >> $GITHUB_OUTPUT
 
   run_tests:
     name: Validate Bootstrap ${{ matrix.bootstrap }}
