@@ -1,21 +1,14 @@
 {
   "name": "Haskell",
-  "image": "haskell:9.4.6",
-  "features": {
-    "ghcr.io/devcontainers/features/common-utils:1": {
-      "installZsh": false,
-      "installOhMyZsh": false,
-      "upgradePackages": false,
-      "username": "vscode"
-    }
+  "build": {
+    "dockerfile": "Dockerfile"
   },
-  "remoteUser": "root",
   "onCreateCommand": "stack --allow-different-user config set install-ghc false && stack --allow-different-user config set system-ghc true && stack --allow-different-user build --only-dependencies --test",
   "customizations": {
     "github.com/rradczewski/kata-bootstraps": {
       "failingTestVerification": "stack test | tee /dev/stderr | grep -q '2 examples, 1 failure'",
       "testCommand": "stack test",
-      "languageLogo": "./haskell-original.svg",
+      "languageLogo": "../haskell-original.svg",
       "resources": [
         {
           "name": "Learn You a Haskell for Great Good!",

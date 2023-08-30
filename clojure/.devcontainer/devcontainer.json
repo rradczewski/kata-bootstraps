@@ -4,9 +4,6 @@
     "dockerfile": "Dockerfile"
   },
   "onCreateCommand": "lein deps",
-  "updateRemoteUserUID": true,
-  "containerUser": "java",
-  "remoteUser": "root",
   "customizations": {
     "github.com/rradczewski/kata-bootstraps": {
       "failingTestVerification": "lein test | tee /dev/stderr |  grep -Pzq '(?s)Ran 1 tests containing 2 assertions.*1 failures, 0 errors'",

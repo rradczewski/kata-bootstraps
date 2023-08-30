@@ -1,7 +1,6 @@
 {
   "name": "Ruby",
   "image": "mcr.microsoft.com/devcontainers/ruby:3.2",
-  "remoteUser": "root",
   "onCreateCommand": "bundle install",
   "customizations": {
     "github.com/rradczewski/kata-bootstraps": {

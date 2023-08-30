@@ -2,7 +2,6 @@
   "name": "PHP",
   "image": "mcr.microsoft.com/devcontainers/php:8.2",
   "onCreateCommand": "composer install",
-  "remoteUser": "root",
   "customizations": {
     "github.com/rradczewski/kata-bootstraps": {
       "failingTestVerification": "composer test | tee /dev/stderr | grep -q 'Tests: 2, Assertions: 2, Failures: 1.'",

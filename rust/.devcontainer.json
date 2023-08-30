@@ -1,7 +1,6 @@
 {
   "name": "Rust",
   "image": "mcr.microsoft.com/devcontainers/rust:1",
-  "remoteUser": "root",
   "onCreateCommand": "cargo update",
   "customizations": {
     "github.com/rradczewski/kata-bootstraps": {

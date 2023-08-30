@@ -4,9 +4,6 @@
     "dockerfile": "Dockerfile"
   },
   "onCreateCommand": "./gradlew dependencies",
-  "updateRemoteUserUID": true,
-  "containerUser": "java",
-  "remoteUser": "root",
   "customizations": {
     "github.com/rradczewski/kata-bootstraps": {
       "failingTestVerification": "./gradlew test 2>&1 | tee /dev/stderr | grep -q '2 tests completed, 1 failed'",

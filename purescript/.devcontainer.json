@@ -1,7 +1,6 @@
 {
   "name": "PureScript",
   "image": "mcr.microsoft.com/devcontainers/javascript-node:20-bullseye",
-  "remoteUser": "root",
   "onCreateCommand": "npm install",
   "remoteEnv": {
     "PATH": "${containerEnv:PATH}:${containerWorkspaceFolder}/node_modules/.bin/"

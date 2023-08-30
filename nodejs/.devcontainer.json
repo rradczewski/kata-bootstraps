@@ -1,7 +1,6 @@
 {
   "name": "NodeJS",
   "image": "mcr.microsoft.com/devcontainers/javascript-node:20-bullseye",
-  "remoteUser": "root",
   "onCreateCommand": "npm install",
   "customizations": {
     "github.com/rradczewski/kata-bootstraps": {
