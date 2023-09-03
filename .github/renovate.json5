@@ -99,6 +99,13 @@
       "groupName": "sbt-update"
     },
     {
+      "matchDepNames": [
+        "scala"
+      ],
+      "additionalBranchPrefix": "scala-",
+      "groupName": "scala-update"
+    },
+    {
       "matchFileNames": [
         "kotlin/**"
       ],
