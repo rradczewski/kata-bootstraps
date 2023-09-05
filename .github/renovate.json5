@@ -84,26 +84,16 @@
     },
     {
       "matchDepNames": [
-        "scala-docker-image-java-version"
+        "scala-docker-image-java-version",
+        "scala-docker-image-sbt-version",
+        "scala-docker-image-scala-version",
+        "sbt/sbt",
+        "scala"
       ],
       "matchDepPatterns": [
         "^scala-docker-image.+"
       ],
-      "separateMajorMinor": true
-    },
-    {
-      "matchDepNames": [
-        "sbt/sbt"
-      ],
-      "additionalBranchPrefix": "scala-",
       "groupName": "sbt-update"
-    },
-    {
-      "matchDepNames": [
-        "scala"
-      ],
-      "additionalBranchPrefix": "scala-",
-      "groupName": "scala-update"
     },
     {
       "matchFileNames": [
