@@ -83,6 +83,22 @@
       "enabled": false
     },
     {
+      "matchDepTypes": [
+        "golang"
+      ],
+      "rangeStrategy": "replace",
+      "versioning": "npm"
+    },
+    {
+      "matchDepTypes": [
+        "golang"
+      ],
+      "matchDepNames": [
+        "mcr.microsoft.com/devcontainers/go"
+      ],
+      "groupName": "golang-update"
+    },
+    {
       "matchDepNames": [
         "scala-docker-image-java-version",
         "scala-docker-image-sbt-version",
