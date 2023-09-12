@@ -1,4 +1,5 @@
-image: haskell:9.4.6
+image:
+  file: .devcontainer/Dockerfile
 tasks:
   - name: Init
     init: stack --allow-different-user config set install-ghc false && stack

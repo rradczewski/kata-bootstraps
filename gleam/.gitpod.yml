@@ -1,4 +1,5 @@
-image: ghcr.io/gleam-lang/gleam:v0.30.5-erlang
+image:
+  file: .devcontainer/Dockerfile
 tasks:
   - name: Init
     init: rm manifest.toml || true; gleam deps download
