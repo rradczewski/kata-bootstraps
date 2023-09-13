@@ -112,6 +112,14 @@
       "groupName": "sbt-update"
     },
     {
+      "matchCurrentVersion": "^2",
+      "matchPackageNames": [
+        "scala",
+        "scala-docker-image-scala-version"
+      ],
+      "allowedVersions": "^2"
+    },
+    {
       "matchFileNames": [
         "kotlin/**"
       ],
