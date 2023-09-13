@@ -1,5 +1,5 @@
 {
-  "name": "Scala",
+  "name": "Scala2",
   "build": {
     "dockerfile": "Dockerfile"
   },
