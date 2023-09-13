@@ -4,5 +4,5 @@ tasks:
     init: dotnet build
 vscode:
   extensions:
-    - ms-dotnettools.csharp
+    - Ionide.Ionide-fsharp
     - MS-vsliveshare.vsliveshare
