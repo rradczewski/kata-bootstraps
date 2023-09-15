@@ -161,11 +161,11 @@
   "regexManagers": [
     {
       "fileMatch": [
-        "\\.?devcontainer.json$"
+        "haskell/.devcontainer/Dockerfile$"
       ],
       "depNameTemplate": "haskell-ghc",
       "matchStrings": [
-        "\"image\" *: *\"haskell:(?<currentValue>.+?)\",?"
+        "^FROM haskell:(?<currentValue>.+)$"
       ],
       "datasourceTemplate": "custom.haskell-ghc",
       "versioningTemplate": "semver"
