@@ -161,7 +161,8 @@
   "regexManagers": [
     {
       "fileMatch": [
-        "haskell/.devcontainer/Dockerfile$"
+        "(^|/|\\.)Dockerfile$",
+        "(^|/)Dockerfile[^/]*$"
       ],
       "depNameTemplate": "haskell-ghc",
       "matchStrings": [
