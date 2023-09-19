@@ -39,10 +39,11 @@
       "separateMajorMinor": false
     },
     {
-      "matchPaths": [
-        "haskell/**",
-        "haskell/*"
+      "matchDepNames": [
+        "haskell-stack",
+        "haskell-ghc"
       ],
+      "additionalBranchPrefix": "haskell-",
       "groupName": "haskell",
       "separateMajorMinor": false
     },
@@ -166,7 +167,7 @@
       ],
       "depNameTemplate": "haskell-ghc",
       "matchStrings": [
-        "^FROM haskell:(?<currentValue>.+)$"
+        "FROM haskell:(?<currentValue>.+)"
       ],
       "datasourceTemplate": "custom.haskell-ghc",
       "versioningTemplate": "semver"
