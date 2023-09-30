@@ -1,4 +1,4 @@
-image: mcr.microsoft.com/devcontainers/javascript-node:20-bullseye
+image: mcr.microsoft.com/devcontainers/javascript-node:20-bookworm
 tasks:
   - name: Init
     init: npm install
