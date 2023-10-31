@@ -1,4 +1,4 @@
-FROM docker.io/eclipse-temurin:21_35-jdk-jammy
+FROM docker.io/eclipse-temurin:21.0.1_12-jdk-jammy
 
 ADD https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein /usr/local/bin/lein
 RUN chmod 755 /usr/local/bin/lein
