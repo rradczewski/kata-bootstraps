@@ -3,7 +3,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.20"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.21"
     }
 }
 
@@ -19,7 +19,7 @@ test {
 
 dependencies {
     testImplementation 'io.kotest:kotest-runner-junit5:5.8.0'
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.9.20"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.9.21"
 }
 repositories {
     mavenCentral()
