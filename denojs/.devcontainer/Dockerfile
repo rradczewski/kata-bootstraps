@@ -1,5 +1,5 @@
 # renovate: datasource=docker depName=deno-docker-image packageName=docker.io/denoland/deno versioning=regex:^(?<compatibility>.+)-(?<major>\d+)(\.(?<minor>\d+))?(\.(?<patch>\d+))?$
-ARG DENO_VERSION=ubuntu-1.40.3
+ARG DENO_VERSION=ubuntu-1.40.4
 FROM docker.io/denoland/deno:${DENO_VERSION}
 
 RUN useradd -rm -d /home/denojs -s /bin/bash -u 1001 denojs
