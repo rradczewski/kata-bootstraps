@@ -95,7 +95,9 @@
         "golang"
       ],
       "matchDepNames": [
-        "mcr.microsoft.com/devcontainers/go"
+        "mcr.microsoft.com/devcontainers/go",
+        "go",
+        "golang/go"
       ],
       "groupName": "golang-update"
     },
