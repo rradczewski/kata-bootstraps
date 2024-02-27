@@ -3,7 +3,7 @@ ARG JAVA_VERSION=21.0.2_13
 # renovate: datasource=docker depName=scala-docker-image-sbt-version packageName=docker.io/sbtscala/scala-sbt versioning=semver extractVersion=^eclipse-temurin-jammy-.+_(?<version>.+)_[^_]+$
 ARG SBT_VERSION=1.9.9
 # renovate: datasource=docker depName=scala-docker-image-scala-version packageName=docker.io/sbtscala/scala-sbt versioning=semver extractVersion=^eclipse-temurin-jammy-.+_[^_]+_(?<version>.+)$
-ARG SCALA_VERSION=2.13.12
+ARG SCALA_VERSION=2.13.13
 FROM docker.io/sbtscala/scala-sbt:eclipse-temurin-jammy-${JAVA_VERSION}_${SBT_VERSION}_${SCALA_VERSION}
 
 USER sbtuser
