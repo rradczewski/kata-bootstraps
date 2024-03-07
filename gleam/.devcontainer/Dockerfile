@@ -1,4 +1,4 @@
-FROM ghcr.io/gleam-lang/gleam:v0.34.1-erlang
+FROM ghcr.io/gleam-lang/gleam:v1.0.0-erlang
 
 RUN useradd -rm -d /home/gleam -s /bin/bash -u 1001 gleam
 USER gleam
