@@ -7,15 +7,9 @@ import (
 )
 
 func TestFails(t *testing.T) {
-
-	// assert equality
-	assert.Equal(t, false, true, "Test should fail")
-
+	assert.False(t, BoolFunc(), "Test should fail")
 }
 
 func TestSucceeds(t *testing.T) {
-
-	// assert equality
-	assert.Equal(t, true, true, "Test should succeed")
-
+	assert.Equal(t, "world", Hello(), "Test should succeed")
 }
