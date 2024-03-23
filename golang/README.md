@@ -8,11 +8,10 @@
 ## Test Command
 
 ```sh
-$ ginkgo
+$ go test .
 ```
 
 ## References
 
 - [Go Reference](https://go.dev/doc/)
-- [Ginkgo Test Runner](https://onsi.github.io/ginkgo/)
 - [Testify Assertions](https://github.com/stretchr/testify/)
