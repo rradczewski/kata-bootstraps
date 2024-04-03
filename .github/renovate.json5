@@ -137,7 +137,8 @@
       ],
       "matchPackageNames": [
         "eclipse-temurin",
-        "docker.io/eclipse-temurin"
+        "docker.io/eclipse-temurin",
+        "docker.io/maven"
       ],
       "additionalBranchPrefix": "java-",
       "groupName": "jdk-update"
