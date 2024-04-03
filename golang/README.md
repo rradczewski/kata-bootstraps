@@ -8,7 +8,7 @@
 ## Test Command
 
 ```sh
-$ ginkgo
+$ go test
 ```
 
 ## References
