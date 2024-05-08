@@ -1,6 +1,6 @@
 {
   "name": "Typescript",
-  "image": "mcr.microsoft.com/devcontainers/javascript-node:20-bookworm",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:22-bookworm",
   "onCreateCommand": "npm install",
   "customizations": {
     "github.com/rradczewski/kata-bootstraps": {
