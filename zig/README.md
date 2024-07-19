@@ -16,5 +16,4 @@ $ zig build test
 - [Learn zig](https://ziglang.org/learn/)
 - [zig Guide](https://zig.guide/)
 - [zigings/exercises](https://codeberg.org/ziglings/exercises/)
-- [zigings/exercises](https://codeberg.org/ziglings/exercises/)
 - [Assertions](https://ziglang.org/documentation/master/#std;testing;testing)
