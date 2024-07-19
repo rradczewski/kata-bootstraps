@@ -1,4 +1,5 @@
 {
+    "name": "zig",
     "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
     "features": {
         "ghcr.io/devcontainers-contrib/features/zig:1": {}
