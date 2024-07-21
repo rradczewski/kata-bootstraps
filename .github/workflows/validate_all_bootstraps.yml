@@ -1,6 +1,8 @@
 name: Validate all Bootstraps
 
 on:
+  schedule:
+    - cron: "0 9 * * 1"
   workflow_dispatch:
   push:
     paths:
