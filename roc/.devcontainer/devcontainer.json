@@ -8,7 +8,7 @@
         "github.com/rradczewski/kata-bootstraps": {
             "failingTestVerification": "roc test | tee /dev/stderr | sed 's,\\x1B\\[[0-9;]*m,,g' | grep -q  '1 failed and 1 passed'",
             "testCommand": "roc test",
-            "languageLogo": "./roc.svg",
+            "languageLogo": "../roc.svg",
             "resources": [
                 {
                     "name": "roc Tutorial",
