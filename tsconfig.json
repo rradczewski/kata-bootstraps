@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "sourceMap": true,
+    "lib": ["ES2020"],
+    "module": "commonjs",
+    "target": "ES2020",
+    "strictNullChecks": true,
+    "rootDir": "."
+  },
+  "exclude": ["node_modules", "target"]
+}
+
