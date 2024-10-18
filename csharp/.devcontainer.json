@@ -1,6 +1,6 @@
 {
   "name": "C# Dotnet",
-  "image": "mcr.microsoft.com/devcontainers/dotnet:8.0",
+  "image": "mcr.microsoft.com/devcontainers/dotnet:9.0",
   "onCreateCommand": "dotnet build",
   "customizations": {
     "github.com/rradczewski/kata-bootstraps": {
