@@ -1,0 +1,26 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:2.0.21"
+    }
+}
+
+apply plugin: 'kotlin'
+
+kotlin {
+    jvmToolchain(22)
+}
+
+test {
+    useJUnitPlatform()
+}
+
+dependencies {
+    testImplementation 'io.kotest:kotest-runner-junit5:5.9.1'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:2.0.21"
+}
+repositories {
+    mavenCentral()
+}
