@@ -7,7 +7,7 @@
   "automergeType": "branch",
   "commitMessagePrefix": "[{{packageFileDir}}] {{semanticPrefix}}",
   "separateMajorMinor": false,
-  "additionalBranchPrefix": "{{packageFileDir}}-",
+  "additionalBranchPrefix": "{{{ replace '(.*?)\\/.*' '$1' packageFileDir}}}-",
   "packageRules": [
     {
       "matchDatasources": ["docker"],
