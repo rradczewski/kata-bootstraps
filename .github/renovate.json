@@ -59,7 +59,11 @@
     },
     {
       "matchDepTypes": ["golang"],
-      "matchDepNames": ["mcr.microsoft.com/devcontainers/go"],
+      "matchPackageNames": [
+        "mcr.microsoft.com/devcontainers/go",
+        "golang",
+        "go"
+      ],
       "groupName": "golang-update"
     },
     {
