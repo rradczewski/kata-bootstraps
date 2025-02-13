@@ -89,13 +89,13 @@
       "allowedVersions": "^2"
     },
     {
-      "matchFileNames": ["kotlin/**"],
+      "matchFileNames": ["kotlin/*", "kotlin/**"],
       "matchPackageNames": ["eclipse-temurin", "docker.io/eclipse-temurin"],
       "additionalBranchPrefix": "kotlin-",
       "groupName": "jdk-update"
     },
     {
-      "matchFileNames": ["java/**"],
+      "matchFileNames": ["java/*", "java/**"],
       "matchPackageNames": [
         "eclipse-temurin",
         "docker.io/eclipse-temurin",
