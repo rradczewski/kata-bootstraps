@@ -14,6 +14,10 @@
       "defaultRegistryUrls": ["https://index.docker.io"]
     },
     {
+      "matchFileNames": ["gleam/gleam.toml"],
+      "rangeStrategy": "replace"
+    },
+    {
       "matchFileNames": ["elm/**", "elm/*"],
       "groupName": "elm",
       "separateMajorMinor": false
