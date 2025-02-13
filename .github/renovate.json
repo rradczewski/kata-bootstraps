@@ -53,19 +53,16 @@
       "enabled": false
     },
     {
-      "matchDepTypes": ["golang"],
-      "rangeStrategy": "replace"
+      "matchDatasources": ["golang-version"],
+      "rangeStrategy": "bump",
+      "groupName": "golang-update"
     },
     {
       "matchDepNames": ["mcr.microsoft.com/devcontainers/dotnet"],
       "groupName": "dotnet-update"
     },
     {
-      "matchPackageNames": [
-        "mcr.microsoft.com/devcontainers/go",
-        "golang",
-        "go"
-      ],
+      "matchPackageNames": ["golang"],
       "groupName": "golang-update"
     },
     {
