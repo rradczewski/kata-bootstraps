@@ -1,4 +1,4 @@
-image: mcr.microsoft.com/devcontainers/go:1.23
+image: golang:1.23
 tasks:
   - name: Init
     init: go get && go mod download
