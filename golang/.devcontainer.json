@@ -1,7 +1,16 @@
 {
   "name": "Go",
-  "image": "mcr.microsoft.com/devcontainers/go:1.23",
+  "image": "golang:1.23",
   "onCreateCommand": "go get && go mod download",
+  "features": {
+    "ghcr.io/devcontainers/features/common-utils:2": {
+      "installZsh": "true",
+      "username": "vscode",
+      "userUid": "1000",
+      "userGid": "1000",
+      "upgradePackages": "true"
+    }
+  },
   "customizations": {
     "github.com/rradczewski/kata-bootstraps": {
       "failingTestVerification": "go test -v . | tee /dev/stderr | grep -zPq '(?s)FAIL: TestFails.*PASS: TestSucceeds'",
