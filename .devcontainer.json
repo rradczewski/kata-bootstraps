@@ -1,0 +1,39 @@
+{
+  "name": "Rust",
+  "image": "mcr.microsoft.com/devcontainers/rust:1",
+  "onCreateCommand": "cargo update",
+  "customizations": {
+    "github.com/rradczewski/kata-bootstraps": {
+      "failingTestVerification": "cargo test | tee /dev/stderr | grep -q 'test result: FAILED. 1 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out;'",
+      "testCommand": "cargo test",
+      "languageLogo": "./rust-plain.svg",
+      "resources": [
+        {
+          "name": "Rust Reference",
+          "url": "https://www.rust-lang.org/learn"
+        },
+        {
+          "name": "Test Reference",
+          "url": "https://doc.rust-lang.org/test/index.html"
+        }
+      ]
+    },
+    "vscode": {
+      "settings": {
+        "lldb.executable": "/usr/bin/lldb",
+        "files.watcherExclude": {
+          "**/target/**": true
+        },
+        "rust-analyzer.checkOnSave.command": "clippy"
+      },
+      "extensions": [
+        "vadimcn.vscode-lldb",
+        "mutantdino.resourcemonitor",
+        "rust-lang.rust-analyzer",
+        "tamasfe.even-better-toml",
+        "serayuzgur.crates",
+        "MS-vsliveshare.vsliveshare"
+      ]
+    }
+  }
+}
