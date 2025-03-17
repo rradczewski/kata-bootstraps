@@ -1,7 +1,12 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:recommended", "docker:enableMajor"],
-  "ignorePresets": ["workarounds:javaLTSVersions"],
+  "extends": [
+    "config:recommended",
+    "docker:enableMajor"
+  ],
+  "ignorePresets": [
+    "workarounds:javaLTSVersions"
+  ],
   "dependencyDashboard": true,
   "automerge": true,
   "automergeType": "branch",
@@ -10,63 +15,110 @@
   "additionalBranchPrefix": "{{{ replace '(.*?)\\/.*' '$1' packageFileDir}}}-",
   "packageRules": [
     {
-      "matchDatasources": ["docker"],
-      "defaultRegistryUrls": ["https://index.docker.io"]
+      "matchFileNames": [
+        ".github/**",
+        ".github/*"
+      ],
+      "minimumReleaseAge": "30 days"
     },
     {
-      "matchFileNames": ["gleam/gleam.toml"],
+      "matchDatasources": [
+        "docker"
+      ],
+      "defaultRegistryUrls": [
+        "https://index.docker.io"
+      ]
+    },
+    {
+      "matchFileNames": [
+        "gleam/gleam.toml"
+      ],
       "rangeStrategy": "replace"
     },
     {
-      "matchFileNames": ["elm/**", "elm/*"],
+      "matchFileNames": [
+        "elm/**",
+        "elm/*"
+      ],
       "groupName": "elm",
       "separateMajorMinor": false
     },
     {
-      "matchFileNames": ["purescript/**", "purescript/*"],
+      "matchFileNames": [
+        "purescript/**",
+        "purescript/*"
+      ],
       "groupName": "purescript",
       "separateMajorMinor": false
     },
     {
-      "matchDepNames": ["haskell-stack", "haskell-ghc"],
+      "matchDepNames": [
+        "haskell-stack",
+        "haskell-ghc"
+      ],
       "additionalBranchPrefix": "haskell-",
       "groupName": "haskell",
       "separateMajorMinor": false
     },
     {
-      "matchPackageNames": ["docker.io/eclipse-temurin", "eclipse-temurin"],
+      "matchPackageNames": [
+        "docker.io/eclipse-temurin",
+        "eclipse-temurin"
+      ],
       "versioning": "regex:^(?<major>\\d+)(\\.(?<minor>\\d+))?(\\.(?<patch>\\d+))?(_(?<build>\\d+))?(-(?<compatibility>.*))?$"
     },
     {
-      "matchPackageNames": ["docker.io/maven", "maven"],
+      "matchPackageNames": [
+        "docker.io/maven",
+        "maven"
+      ],
       "versioning": "regex:^(?<minor>\\d+)(\\.(?<patch>\\d+))?(\\.(?<build>\\d+))?-eclipse-temurin-(?<major>\\d+)?(-(?<compatibility>.*))?$"
     },
     {
-      "matchFileNames": ["(^|/|\\.)pom\\.xml$", "(^|/|\\.)build\\.gradle$"],
-      "matchDepNames": ["eclipse-temurin"],
-      "matchDatasources": ["docker"],
+      "matchFileNames": [
+        "(^|/|\\.)pom\\.xml$",
+        "(^|/|\\.)build\\.gradle$"
+      ],
+      "matchDepNames": [
+        "eclipse-temurin"
+      ],
+      "matchDatasources": [
+        "docker"
+      ],
       "allowedVersions": "/^[0-9]+$/"
     },
     {
-      "matchDepNames": ["haskell"],
-      "matchDatasources": ["docker"],
+      "matchDepNames": [
+        "haskell"
+      ],
+      "matchDatasources": [
+        "docker"
+      ],
       "enabled": false
     },
     {
-      "matchDatasources": ["golang-version"],
+      "matchDatasources": [
+        "golang-version"
+      ],
       "rangeStrategy": "bump",
       "groupName": "golang-update"
     },
     {
-      "matchDepNames": ["mcr.microsoft.com/devcontainers/dotnet"],
+      "matchDepNames": [
+        "mcr.microsoft.com/devcontainers/dotnet"
+      ],
       "groupName": "dotnet-update"
     },
     {
-      "matchPackageNames": ["golang"],
+      "matchPackageNames": [
+        "golang"
+      ],
       "groupName": "golang-update"
     },
     {
-      "matchDepTypes": ["golang"],
+      "matchDepTypes": [
+        "golang"
+      ],
       "groupName": "golang-update"
     },
     {
@@ -82,17 +134,29 @@
     },
     {
       "matchCurrentVersion": "^2",
-      "matchPackageNames": ["scala", "scala-docker-image-scala-version"],
+      "matchPackageNames": [
+        "scala",
+        "scala-docker-image-scala-version"
+      ],
       "allowedVersions": "^2"
     },
     {
-      "matchFileNames": ["kotlin/*", "kotlin/**"],
-      "matchPackageNames": ["eclipse-temurin", "docker.io/eclipse-temurin"],
+      "matchFileNames": [
+        "kotlin/*",
+        "kotlin/**"
+      ],
+      "matchPackageNames": [
+        "eclipse-temurin",
+        "docker.io/eclipse-temurin"
+      ],
       "additionalBranchPrefix": "kotlin-",
       "groupName": "jdk-update"
     },
     {
-      "matchFileNames": ["java/*", "java/**"],
+      "matchFileNames": [
+        "java/*",
+        "java/**"
+      ],
       "matchPackageNames": [
         "eclipse-temurin",
         "docker.io/eclipse-temurin",
@@ -121,31 +185,46 @@
   "customManagers": [
     {
       "customType": "regex",
-      "fileMatch": ["(^|/|\\.)Dockerfile$", "(^|/)Dockerfile[^/]*$"],
+      "fileMatch": [
+        "(^|/|\\.)Dockerfile$",
+        "(^|/)Dockerfile[^/]*$"
+      ],
       "depNameTemplate": "haskell-ghc",
-      "matchStrings": ["FROM haskell:(?<currentValue>.+)"],
+      "matchStrings": [
+        "FROM haskell:(?<currentValue>.+)"
+      ],
       "datasourceTemplate": "custom.haskell-ghc",
       "versioningTemplate": "semver"
     },
     {
       "customType": "regex",
-      "fileMatch": ["(^|/|\\.)stack\\.yaml$"],
+      "fileMatch": [
+        "(^|/|\\.)stack\\.yaml$"
+      ],
       "depNameTemplate": "haskell-stack",
-      "matchStrings": ["\\nresolver: (?<currentValue>lts-.+?)\\s"],
+      "matchStrings": [
+        "\\nresolver: (?<currentValue>lts-.+?)\\s"
+      ],
       "datasourceTemplate": "custom.haskell-stack",
       "versioningTemplate": "regex:lts-(?<major>\\d+)\\.(?<minor>\\d+)"
     },
     {
       "customType": "regex",
-      "fileMatch": ["(^|/|\\.)elm\\.json$"],
-      "matchStrings": ["\"elm-version\"\\s*:\\s*\"(?<currentValue>.*)\""],
+      "fileMatch": [
+        "(^|/|\\.)elm\\.json$"
+      ],
+      "matchStrings": [
+        "\"elm-version\"\\s*:\\s*\"(?<currentValue>.*)\""
+      ],
       "depNameTemplate": "elm/compiler",
       "datasourceTemplate": "github-tags",
       "versioningTemplate": "semver"
     },
     {
       "customType": "regex",
-      "fileMatch": ["(^|/|\\.)elm\\.json$"],
+      "fileMatch": [
+        "(^|/|\\.)elm\\.json$"
+      ],
       "matchStrings": [
         "\"(?<depName>.*/.*?)\"\\s*:\\s*\"(?<currentValue>.*)\""
       ],
@@ -154,7 +233,10 @@
     },
     {
       "customType": "regex",
-      "fileMatch": ["(^|/|\\.)Dockerfile$", "(^|/)Dockerfile[^/]*$"],
+      "fileMatch": [
+        "(^|/|\\.)Dockerfile$",
+        "(^|/)Dockerfile[^/]*$"
+      ],
       "matchStrings": [
         "renovate: datasource=(?<datasource>.*?) depName=(?<depName>\\S*)( packageName=(?<packageName>\\S*))?( versioning=(?<versioning>\\S*))?( extractVersion=(?<extractVersion>\\S*))?\\s+ENV .*?_VERSION=(?<currentValue>.*)\\s",
         "renovate: datasource=(?<datasource>.*?) depName=(?<depName>\\S*)( packageName=(?<packageName>\\S*))?( versioning=(?<versioning>\\S*))?( extractVersion=(?<extractVersion>\\S*))?\\s+ARG .*?_VERSION=(?<currentValue>.*)\\s"
@@ -163,7 +245,9 @@
     },
     {
       "customType": "regex",
-      "fileMatch": ["(^|/)packages.dhall[^/]*$"],
+      "fileMatch": [
+        "(^|/)packages.dhall[^/]*$"
+      ],
       "matchStrings": [
         "-- renovate: datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\s+let upstream =.*?(?<currentValue>psc-.*)/packages.dhall\\s"
       ],
@@ -171,7 +255,9 @@
     },
     {
       "customType": "regex",
-      "fileMatch": ["\\.?devcontainer.json$"],
+      "fileMatch": [
+        "\\.?devcontainer.json$"
+      ],
       "matchStrings": [
         "\"image\" *: *\"(?<depName>.+?):(?<currentValue>.+?)\",?"
       ],
@@ -179,7 +265,9 @@
     },
     {
       "customType": "regex",
-      "fileMatch": ["(^|/)gleam\\.toml$"],
+      "fileMatch": [
+        "(^|/)gleam\\.toml$"
+      ],
       "matchStringsStrategy": "recursive",
       "matchStrings": [
         "\\[(dependencies|dev-dependencies)\\]\\s*[^\\[]*",
@@ -190,7 +278,10 @@
     },
     {
       "customType": "regex",
-      "fileMatch": ["(^|/|\\.)pom\\.xml$", "(^|/|\\.)build\\.gradle$"],
+      "fileMatch": [
+        "(^|/|\\.)pom\\.xml$",
+        "(^|/|\\.)build\\.gradle$"
+      ],
       "matchStrings": [
         "<java\\.version>(?<currentValue>.*?)<\\/java\\.version>",
         "<maven\\.compiler\\.source>(?<currentValue>.*?)<\\/maven\\.compiler\\.source>",
@@ -204,7 +295,9 @@
     },
     {
       "customType": "regex",
-      "fileMatch": ["(^|/).+\\..sproj$"],
+      "fileMatch": [
+        "(^|/).+\\..sproj$"
+      ],
       "matchStrings": [
         "<TargetFramework>net(?<currentValue>.*?)<\\/TargetFramework>"
       ],
