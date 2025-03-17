@@ -14,7 +14,7 @@ jobs:
           fetch-depth: 0
       - name: Run changed-files with json output
         id: changed-dirs
-        uses: tj-actions/changed-files@v46
+        uses: tj-actions/changed-files@2f7c5bfce28377bc069a65ba478de0a74aa0ca32 # v46
         with:
           dir_names: true
       - name: Generate Matrix
@@ -40,7 +40,7 @@ jobs:
       matrix:
         bootstrap: ${{ fromJson(needs.find_bootstraps.outputs.bootstraps) }}
     steps:
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@cdca7365b2dadb8aad0a33bc7601856ffabcc48e # v4
         with:
           node-version: lts/*
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
