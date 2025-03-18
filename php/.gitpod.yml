@@ -1,4 +1,4 @@
-image: mcr.microsoft.com/devcontainers/php:8.3
+image: mcr.microsoft.com/devcontainers/php:8.4
 tasks:
   - name: Init
     init: composer install
