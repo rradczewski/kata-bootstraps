@@ -10,7 +10,7 @@ buildscript {
 apply plugin: 'kotlin'
 
 kotlin {
-    jvmToolchain(23)
+    jvmToolchain(24)
 }
 
 test {
