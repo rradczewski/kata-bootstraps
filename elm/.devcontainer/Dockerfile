@@ -8,6 +8,6 @@ RUN curl --retry 5 --retry-all-errors --fail --silent --show-error --location \
       gunzip > /tmp/elm
 
 
-FROM mcr.microsoft.com/devcontainers/javascript-node:22-bullseye
+FROM mcr.microsoft.com/devcontainers/javascript-node:24-bullseye
 
 COPY --from=elm-compiler --chmod=755 /tmp/elm /usr/local/bin/elm
