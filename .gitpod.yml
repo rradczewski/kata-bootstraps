@@ -1,0 +1,8 @@
+image: mcr.microsoft.com/devcontainers/dotnet:9.0
+tasks:
+  - name: Init
+    init: dotnet build
+vscode:
+  extensions:
+    - ms-dotnettools.csharp
+    - MS-vsliveshare.vsliveshare
