@@ -1,4 +1,4 @@
-image: crystallang/crystal:1.17.0
+image: crystallang/crystal:1.17.1
 tasks:
   - name: Init
 vscode:
