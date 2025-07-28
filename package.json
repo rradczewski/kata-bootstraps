@@ -1,0 +1,21 @@
+{
+  "name": "rescript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "rescript build",
+    "test": "rescript build && jest",
+    "test:watch": "npm-run-all -l build --parallel test:watch:*",
+    "test:watch:compile": "rescript build -w",
+    "test:watch:test": "CI=1 jest --watchAll"
+  },
+  "author": "",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@glennsl/rescript-jest": "^0.11.0",
+    "jest": "^30.0.0",
+    "npm-run-all2": "^8.0.0",
+    "rescript": "^11.0.0"
+  }
+}
