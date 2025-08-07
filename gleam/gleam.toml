@@ -10,7 +10,7 @@ description = "A Gleam project"
 # links = [{ title = "Website", href = "https://gleam.run" }]
 
 [dependencies]
-gleam_stdlib = "== 0.62.0"
+gleam_stdlib = "== 0.62.1"
 
 [dev-dependencies]
 gleeunit = "== 1.3.1"
