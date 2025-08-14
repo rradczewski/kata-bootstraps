@@ -1,4 +1,4 @@
-image: golang:1.24
+image: golang:1.25
 tasks:
   - name: Init
     init: go get && go mod download
