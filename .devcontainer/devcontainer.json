@@ -1,0 +1,39 @@
+{
+  "name": "Scala2",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "onCreateCommand": "sbt update",
+  "customizations": {
+    "github.com/rradczewski/kata-bootstraps": {
+      "failingTestVerification": "sbt test | tee /dev/stderr | grep -q 'Failed: Total 2, Failed 1, Errors 0, Passed 1'",
+      "testCommand": "sbt test",
+      "languageLogo": "../scala-original.svg",
+      "resources": [
+        {
+          "name": "Scala Documentation",
+          "url": "https://docs.scala-lang.org/"
+        },
+        {
+          "name": "Scala2 Language Reference",
+          "url": "https://docs.scala-lang.org/overviews/index.html"
+        },
+        {
+          "name": "Scala Cheatsheet",
+          "url": "https://docs.scala-lang.org/cheatsheets/index.html"
+        },
+        {
+          "name": "MUnit Reference",
+          "url": "https://scalameta.org/munit/docs/getting-started.html"
+        }
+      ]
+    },
+    "vscode": {
+      "extensions": [
+        "MS-vsliveshare.vsliveshare",
+        "scalameta.metals",
+        "scala-lang.scala"
+      ]
+    }
+  }
+}
