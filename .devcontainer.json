@@ -1,0 +1,32 @@
+{
+  "name": "C# Dotnet",
+  "image": "mcr.microsoft.com/devcontainers/dotnet:9.0",
+  "onCreateCommand": "dotnet build",
+  "customizations": {
+    "github.com/rradczewski/kata-bootstraps": {
+      "failingTestVerification": "dotnet test | tee /dev/stderr | grep -q 'Failed!  - Failed:     1, Passed:     1, Skipped:     0, Total:     2'",
+      "testCommand": "dotnet test",
+      "languageLogo": "./csharp-original.svg",
+      "resources": [
+        {
+          "name": "C# Reference",
+          "url": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/"
+        },
+        {
+          "name": "Dotnet Reference",
+          "url": "https://learn.microsoft.com/en-us/dotnet/api/"
+        },
+        {
+          "name": "Fluent Assertions",
+          "url": "https://fluentassertions.com/introduction"
+        }
+      ]
+    },
+    "vscode": {
+      "extensions": [
+        "ms-dotnettools.csharp",
+        "MS-vsliveshare.vsliveshare"
+      ]
+    }
+  }
+}
