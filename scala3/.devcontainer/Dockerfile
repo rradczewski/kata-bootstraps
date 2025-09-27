@@ -1,5 +1,5 @@
 # renovate: datasource=docker depName=scala-docker-image-java-version packageName=docker.io/sbtscala/scala-sbt versioning=regex:^(?<major>\d+)(\.(?<minor>\d+))?(\.(?<patch>\d+))?(_(?<build>\d+))?$ extractVersion=^eclipse-temurin-(?<version>.+)_[^_]+_[^_]+$
-ARG JAVA_VERSION=24.0.1_9
+ARG JAVA_VERSION=25_36
 # renovate: datasource=docker depName=scala-docker-image-sbt-version packageName=docker.io/sbtscala/scala-sbt versioning=semver extractVersion=^eclipse-temurin-.+_(?<version>.+)_[^_]+$
 ARG SBT_VERSION=1.11.6
 # renovate: datasource=docker depName=scala-docker-image-scala-version packageName=docker.io/sbtscala/scala-sbt versioning=semver extractVersion=^eclipse-temurin-.+_[^_]+_(?<version>.+)$
