@@ -1,0 +1,8 @@
+image: mcr.microsoft.com/devcontainers/javascript-node:24-bookworm
+tasks:
+  - name: Init
+    init: npm install
+vscode:
+  extensions:
+    - chenglou92.rescript-vscode
+    - MS-vsliveshare.vsliveshare
