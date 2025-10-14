@@ -1,6 +1,6 @@
 {
   "name": "Crystal",
-  "image": "crystallang/crystal:1.17.1",
+  "image": "crystallang/crystal:1.18.0",
   "customizations": {
     "github.com/rradczewski/kata-bootstraps": {
       "failingTestVerification": "crystal spec | tee /dev/stderr | grep -q '2 examples, 1 failures, 0 errors, 0 pending'",
