@@ -11,7 +11,7 @@ jobs:
     name: Generate gitpod.yml from devcontainers
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
         with:
           node-version: lts/*
       - uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955 # v4
@@ -38,7 +38,7 @@ jobs:
     name: Generate new README and commit to repository
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
         with:
           node-version: lts/*
       - uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955 # v4
@@ -69,7 +69,7 @@ jobs:
     name: Force-push subtrees for all languages
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
         with:
           node-version: lts/*
       - uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955 # v4
