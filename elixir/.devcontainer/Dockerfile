@@ -1,4 +1,4 @@
-FROM docker.io/elixir:1.18.4
+FROM docker.io/elixir:1.19.1
 
 RUN useradd -rm -d /home/elixir -s /bin/bash -u 1001 elixir
 USER elixir
