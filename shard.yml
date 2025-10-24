@@ -1,0 +1,11 @@
+name: app
+version: 0.1.0
+
+authors:
+  - Raimo Radczewski <hello@craftswerk.io>
+
+targets:
+  app:
+    main: src/app.cr
+
+license: MIT
