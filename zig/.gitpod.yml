@@ -1,6 +1,0 @@
-image: mcr.microsoft.com/devcontainers/base:ubuntu
-tasks:
-  - name: Init
-vscode:
-  extensions:
-    - ziglang.vscode-zig
