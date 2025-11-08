@@ -6,6 +6,11 @@ ARG SBT_VERSION=1.11.7
 ARG SCALA_VERSION=3.7.3
 FROM docker.io/sbtscala/scala-sbt:eclipse-temurin-${JAVA_VERSION}_${SBT_VERSION}_${SCALA_VERSION}
 
+RUN userdel ubuntu
+RUN groupmod -g 1000 sbtuser
+RUN usermod -u 1000 -g 1000 sbtuser
+RUN find /home/sbtuser -uid 1001 -exec chown 1000:1000 {} \;
+
 USER sbtuser
 
 WORKDIR /home/sbtuser
