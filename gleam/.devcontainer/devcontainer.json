@@ -6,7 +6,7 @@
   "onCreateCommand": "rm manifest.toml || true; gleam deps download",
   "customizations": {
     "github.com/rradczewski/kata-bootstraps": {
-      "failingTestVerification": "gleam test | tee /dev/stderr | grep -q '2 tests, 1 failures'",
+      "failingTestVerification": "gleam test | tee /dev/stderr | grep -q '1 passed, 1 failures'",
       "testCommand": "gleam test",
       "languageLogo": "../logo.svg",
       "resources": [
