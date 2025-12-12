@@ -1,0 +1,10 @@
+image:
+  file: .devcontainer/Dockerfile
+tasks:
+  - name: Init
+    init: ./gradlew dependencies
+vscode:
+  extensions:
+    - vscjava.vscode-java-pack
+    - fwcd.kotlin
+    - MS-vsliveshare.vsliveshare
