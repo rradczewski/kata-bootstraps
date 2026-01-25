@@ -1,0 +1,7 @@
+image:
+  file: .devcontainer/Dockerfile
+tasks:
+  - name: Init
+vscode:
+  extensions:
+    - IvanDemchenko.roc-lang-unofficial
