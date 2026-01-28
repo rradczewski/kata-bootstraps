@@ -1,6 +1,6 @@
 {
   "name": "Ruby",
-  "image": "mcr.microsoft.com/devcontainers/ruby:3.4",
+  "image": "mcr.microsoft.com/devcontainers/ruby:4.0",
   "onCreateCommand": "bundle install",
   "customizations": {
     "github.com/rradczewski/kata-bootstraps": {
