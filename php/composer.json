@@ -2,7 +2,7 @@
     "name": "rradczewski/kata-bootstrap",
     "type": "project",
     "require-dev": {
-        "phpunit/phpunit": "^12.0"
+        "phpunit/phpunit": "^13.0"
     },
     "autoload": {
         "psr-4": {
