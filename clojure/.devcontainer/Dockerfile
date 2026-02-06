@@ -1,4 +1,4 @@
-FROM docker.io/eclipse-temurin:25.0.1_8-jdk
+FROM docker.io/eclipse-temurin:25.0.2_10-jdk
 
 # Needed for lein
 RUN apt-get update && apt-get install wget -y
