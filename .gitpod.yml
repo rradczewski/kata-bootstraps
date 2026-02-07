@@ -1,0 +1,8 @@
+image:
+  file: .devcontainer/Dockerfile
+tasks:
+  - name: Init
+    init: rm manifest.toml || true; gleam deps download
+vscode:
+  extensions:
+    - MS-vsliveshare.vsliveshare
