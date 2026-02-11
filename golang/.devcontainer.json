@@ -1,6 +1,6 @@
 {
   "name": "Go",
-  "image": "golang:1.25.7",
+  "image": "golang:1.26.0",
   "onCreateCommand": "go get && go mod download",
   "features": {
     "ghcr.io/devcontainers/features/common-utils:2": {
