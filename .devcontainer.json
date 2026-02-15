@@ -1,0 +1,46 @@
+{
+  "name": "Go",
+  "image": "golang:1.26.0",
+  "onCreateCommand": "go get && go mod download",
+  "features": {
+    "ghcr.io/devcontainers/features/common-utils:2": {
+      "installZsh": "true",
+      "username": "vscode",
+      "userUid": "1000",
+      "userGid": "1000",
+      "upgradePackages": "true"
+    }
+  },
+  "customizations": {
+    "github.com/rradczewski/kata-bootstraps": {
+      "failingTestVerification": "go test -v . | tee /dev/stderr | grep -zPq '(?s)FAIL: TestFails.*PASS: TestSucceeds'",
+      "testCommand": "go test",
+      "languageLogo": "./go-original-wordmark.svg",
+      "resources": [
+        {
+          "name": "Go Reference",
+          "url": "https://go.dev/doc/"
+        },
+        {
+          "name": "Ginkgo Test Runner",
+          "url": "https://onsi.github.io/ginkgo/"
+        },
+        {
+          "name": "Testify Assertions",
+          "url": "https://github.com/stretchr/testify/"
+        }
+      ]
+    },
+    "vscode": {
+      "settings": {
+        "go.toolsManagement.checkForUpdates": "local",
+        "go.useLanguageServer": true,
+        "go.gopath": "/go"
+      },
+      "extensions": [
+        "golang.Go",
+        "MS-vsliveshare.vsliveshare"
+      ]
+    }
+  }
+}
