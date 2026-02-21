@@ -1,0 +1,31 @@
+{
+  "name": "Kotlin",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "onCreateCommand": "./gradlew dependencies",
+  "customizations": {
+    "github.com/rradczewski/kata-bootstraps": {
+      "failingTestVerification": "./gradlew test 2>&1 | tee /dev/stderr | grep -q '2 tests completed, 1 failed'",
+      "testCommand": "./gradlew test",
+      "languageLogo": "../kotlin-original.svg",
+      "resources": [
+        {
+          "name": "Kotlin Reference",
+          "url": "https://kotlinlang.org/docs/home.html"
+        },
+        {
+          "name": "Kotest Reference",
+          "url": "https://kotest.io/docs/quickstart"
+        }
+      ]
+    },
+    "vscode": {
+      "extensions": [
+        "vscjava.vscode-java-pack",
+        "fwcd.kotlin",
+        "MS-vsliveshare.vsliveshare"
+      ]
+    }
+  }
+}
