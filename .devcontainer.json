@@ -1,0 +1,32 @@
+{
+  "name": "ReScript",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:24-bookworm",
+  "onCreateCommand": "npm install",
+  "customizations": {
+    "github.com/rradczewski/kata-bootstraps": {
+      "failingTestVerification": "CI=1 npm test 2>&1 | tee /dev/stderr | grep -q 'Tests:       1 failed, 1 passed, 2 total'",
+      "testCommand": "npm run test:watch",
+      "languageLogo": "./rescript-brandmark.svg",
+      "resources": [
+        {
+          "name": "ReScript Reference",
+          "url": "https://rescript-lang.org/docs/manual/latest/introduction"
+        },
+        {
+          "name": "ReScript Jest Usage",
+          "url": "https://github.com/glennsl/rescript-jest#usage"
+        },
+        {
+          "name": "ReScript Jest Interface Definitions",
+          "url": "https://github.com/glennsl/rescript-jest/blob/master/src/jest.resi"
+        }
+      ]
+    },
+    "vscode": {
+      "extensions": [
+        "chenglou92.rescript-vscode",
+        "MS-vsliveshare.vsliveshare"
+      ]
+    }
+  }
+}
