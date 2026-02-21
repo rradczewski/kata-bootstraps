@@ -1,0 +1,9 @@
+image: mcr.microsoft.com/devcontainers/python:3.14
+tasks:
+  - name: Init
+    init: pipenv install
+vscode:
+  extensions:
+    - ms-python.python
+    - ms-python.vscode-pylance
+    - MS-vsliveshare.vsliveshare
