@@ -1,0 +1,7 @@
+image: crystallang/crystal:1.19.1
+tasks:
+  - name: Init
+vscode:
+  extensions:
+    - MS-vsliveshare.vsliveshare
+    - crystal-lang-tools.crystal-lang

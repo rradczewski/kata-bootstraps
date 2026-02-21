@@ -1,0 +1,32 @@
+{
+  "name": "Crystal",
+  "image": "crystallang/crystal:1.19.1",
+  "customizations": {
+    "github.com/rradczewski/kata-bootstraps": {
+      "failingTestVerification": "crystal spec | tee /dev/stderr | grep -q '2 examples, 1 failures, 0 errors, 0 pending'",
+      "testCommand": "crystal spec",
+      "languageLogo": "./crystal-original.svg",
+      "resources": [
+        {
+          "name": "Learn Crystal",
+          "url": "https://crystal-lang.org/reference/getting_started/"
+        },
+        {
+          "name": "Crystal Reference",
+          "url": "https://crystal-lang.org/reference/syntax_and_semantics/"
+        },
+        {
+          "name": "Crystal Spec Reference",
+          "url": "https://crystal-lang.org/reference/guides/testing.html"
+        }
+      ]
+    },
+    "vscode": {
+      "extensions": [
+        "MS-vsliveshare.vsliveshare",
+        "crystal-lang-tools.crystal-lang"
+      ]
+    }
+  }
+}
+
