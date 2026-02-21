@@ -1,0 +1,10 @@
+image:
+  file: .devcontainer/Dockerfile
+tasks:
+  - name: Init
+    init: stack --allow-different-user config set install-ghc false && stack
+      --allow-different-user config set system-ghc true && stack
+      --allow-different-user build --only-dependencies --test
+vscode:
+  extensions:
+    - MS-vsliveshare.vsliveshare

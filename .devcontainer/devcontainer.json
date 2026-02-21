@@ -1,0 +1,25 @@
+{
+  "name": "Haskell",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "onCreateCommand": "stack --allow-different-user config set install-ghc false && stack --allow-different-user config set system-ghc true && stack --allow-different-user build --only-dependencies --test",
+  "customizations": {
+    "github.com/rradczewski/kata-bootstraps": {
+      "failingTestVerification": "stack test | tee /dev/stderr | grep -q '2 examples, 1 failure'",
+      "testCommand": "stack test",
+      "languageLogo": "../haskell-original.svg",
+      "resources": [
+        {
+          "name": "Learn You a Haskell for Great Good!",
+          "url": "http://learnyouahaskell.com/chapters"
+        }
+      ]
+    },
+    "vscode": {
+      "extensions": [
+        "MS-vsliveshare.vsliveshare"
+      ]
+    }
+  }
+}
