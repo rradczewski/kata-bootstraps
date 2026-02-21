@@ -1,0 +1,31 @@
+{
+  "name": "Elm",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "remoteUser": "root",
+  "onCreateCommand": "npm install",
+  "customizations": {
+    "github.com/rradczewski/kata-bootstraps": {
+      "failingTestVerification": "CI=1 npm test 2>&1 | tee /dev/stderr | grep -zPq '(?s)Passed:.+1.+Failed:.+1'",
+      "testCommand": "npm test",
+      "languageLogo": "../elm-original.svg",
+      "resources": [
+        {
+          "name": "Guide",
+          "url": "https://guide.elm-lang.org/"
+        },
+        {
+          "name": "Docs",
+          "url": "https://elm-lang.org/docs"
+        }
+      ]
+    },
+    "vscode": {
+      "extensions": [
+        "Elmtooling.elm-ls-vscode",
+        "MS-vsliveshare.vsliveshare"
+      ]
+    }
+  }
+}
