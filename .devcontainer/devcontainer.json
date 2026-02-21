@@ -1,0 +1,38 @@
+{
+  "name": "Elixir",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/common-utils:1": {
+      "installZsh": false,
+      "installOhMyZsh": false,
+      "upgradePackages": false,
+      "username": "vscode"
+    }
+  },
+  "remoteUser": "root",
+  "onCreateCommand": "mix deps.get && mix compile",
+  "customizations": {
+    "github.com/rradczewski/kata-bootstraps": {
+      "failingTestVerification": "mix test | tee /dev/stderr | grep -q '2 tests, 1 failure'",
+      "testCommand": "mix test",
+      "languageLogo": "../elixir-original.svg",
+      "resources": [
+        {
+          "name": "elixir Reference",
+          "url": "https://elixir-lang.org/docs.html"
+        },
+        {
+          "name": "ExUnit Reference",
+          "url": "https://hexdocs.pm/ex_unit/ExUnit.html"
+        }
+      ]
+    },
+    "vscode": {
+      "extensions": [
+        "MS-vsliveshare.vsliveshare"
+      ]
+    }
+  }
+}
