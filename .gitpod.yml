@@ -1,0 +1,8 @@
+image: mcr.microsoft.com/devcontainers/dotnet:10.0
+tasks:
+  - name: Init
+    init: dotnet build
+vscode:
+  extensions:
+    - Ionide.Ionide-fsharp
+    - MS-vsliveshare.vsliveshare
