@@ -1,0 +1,9 @@
+image: mcr.microsoft.com/devcontainers/javascript-node:24-bookworm
+tasks:
+  - name: Init
+    init: npm install
+vscode:
+  extensions:
+    - MS-vsliveshare.vsliveshare
+    - nwolverson.ide-purescript
+    - dhall.dhall-lang
