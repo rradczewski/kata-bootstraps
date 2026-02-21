@@ -1,0 +1,10 @@
+image:
+  file: .devcontainer/Dockerfile
+tasks:
+  - name: Init
+    init: sbt update
+vscode:
+  extensions:
+    - MS-vsliveshare.vsliveshare
+    - scalameta.metals
+    - scala-lang.scala
