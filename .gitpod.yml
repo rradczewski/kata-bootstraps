@@ -1,0 +1,12 @@
+image: mcr.microsoft.com/devcontainers/rust:1
+tasks:
+  - name: Init
+    init: cargo update
+vscode:
+  extensions:
+    - vadimcn.vscode-lldb
+    - mutantdino.resourcemonitor
+    - rust-lang.rust-analyzer
+    - tamasfe.even-better-toml
+    - serayuzgur.crates
+    - MS-vsliveshare.vsliveshare
