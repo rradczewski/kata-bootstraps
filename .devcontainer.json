@@ -1,0 +1,27 @@
+{
+  "name": "Ruby",
+  "image": "mcr.microsoft.com/devcontainers/ruby:4.0",
+  "onCreateCommand": "bundle install",
+  "customizations": {
+    "github.com/rradczewski/kata-bootstraps": {
+      "failingTestVerification": "bundle exec rspec | tee /dev/stderr | grep -q '2 examples, 1 failure'",
+      "testCommand": "bundle exec rspec",
+      "languageLogo": "./ruby-original.svg",
+      "resources": [
+        {
+          "name": "Ruby Reference",
+          "url": "https://www.ruby-lang.org/en/documentation/"
+        },
+        {
+          "name": "RSpec Reference",
+          "url": "https://rspec.info/"
+        }
+      ]
+    },
+    "vscode": {
+      "extensions": [
+        "MS-vsliveshare.vsliveshare"
+      ]
+    }
+  }
+}
