@@ -7,7 +7,7 @@
   "author": "",
   "license": "UNLICENSED",
   "dependencies": {
-    "@devcontainers/cli": "^0.85.0",
+    "@devcontainers/cli": "^0.86.0",
     "yaml": "^2.2.1"
   }
 }
