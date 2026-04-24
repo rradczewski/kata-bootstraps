@@ -1,4 +1,4 @@
-FROM docker.io/eclipse-temurin:25.0.2_10-jdk
+FROM docker.io/eclipse-temurin:26_35-jdk
 
 RUN useradd -rm -d /home/kotlin -s /bin/bash -u 1001 kotlin
 USER kotlin
