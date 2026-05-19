@@ -15,7 +15,7 @@
   "devDependencies": {
     "@glennsl/rescript-jest": "^0.11.0",
     "jest": "^30.0.0",
-    "npm-run-all2": "^8.0.0",
+    "npm-run-all2": "^9.0.0",
     "rescript": "^11.0.0"
   }
 }
