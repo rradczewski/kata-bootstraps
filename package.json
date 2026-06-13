@@ -1,0 +1,15 @@
+{
+  "name": "purescript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "",
+  "scripts": {
+    "test": "spago test"
+  },
+  "author": "",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "purescript": "^0.15.10",
+    "spago": "^0.21.0"
+  }
+}
