@@ -1,0 +1,14 @@
+{
+  "name": "elm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "elm-test"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "elm-test": "0.19.1-revision17"
+  }
+}
