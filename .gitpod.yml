@@ -1,0 +1,9 @@
+image:
+  file: .devcontainer/Dockerfile
+tasks:
+  - name: Init
+    init: lein deps
+vscode:
+  extensions:
+    - betterthantomorrow.calva
+    - MS-vsliveshare.vsliveshare
