@@ -1,0 +1,9 @@
+image:
+  file: .devcontainer/Dockerfile
+tasks:
+  - name: Init
+    init: ""
+vscode:
+  extensions:
+    - denoland.vscode-deno
+    - MS-vsliveshare.vsliveshare
