@@ -1,0 +1,34 @@
+{
+  "name": "DenoJS",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "onCreateCommand": "",
+  "customizations": {
+    "github.com/rradczewski/kata-bootstraps": {
+      "failingTestVerification": "deno test | tee /dev/stderr | grep -q  '| 1 passed | 1 failed'",
+      "testCommand": "deno test",
+      "languageLogo": "../denojs-original.svg",
+      "resources": [
+        {
+          "name": "Deno Runtime Manual",
+          "url": "https://deno.land/manual/introduction"
+        },
+        {
+          "name": "Deno Standard Library",
+          "url": "https://deno.land/std"
+        },
+        {
+          "name": "Deno Test Reference",
+          "url": "https://deno.land/std/assert/mod.ts"
+        }
+      ]
+    },
+    "vscode": {
+      "extensions": [
+        "denoland.vscode-deno",
+        "MS-vsliveshare.vsliveshare"
+      ]
+    }
+  }
+}
