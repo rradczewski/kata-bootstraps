@@ -10,6 +10,6 @@
   "license": "UNLICENSED",
   "devDependencies": {
     "purescript": "^0.15.10",
-    "spago": "^0.21.0"
+    "spago": "^1.0.0"
   }
 }
